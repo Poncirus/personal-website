@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--title setting-->
+    <title>橘生淮北</title>
+
+    <!--favicon setting-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1b1b">
+    <meta name="apple-mobile-web-app-title" content="橘生淮北">
+    <meta name="application-name" content="橘生淮北">
+    <meta name="msapplication-TileColor" content="#1b1b1b">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+    <!--navbar-->
+    <link rel="stylesheet" href="/template-navbar/navbar.css">
+
+    <!--navbar-->
+    <link rel="stylesheet" href="../template-secondary-navbar/navbar.css">
+</head>
+
+<body class="bg-light">
+    <!--navbar-->
+    <div id="navbar" current-page="Tools">navbar loading</div>
+
+    <!--secondary navbar-->
+    <div id="secondary-navbar" current-page="Notice Search">secondary navbar loading</div>
+
+    <main class="container" role="main">
+
+        <!--annotation message-->
+        <div class="jumbotron mt-4">
+            <h1 class="display-4">Notice Search</h1>
+            <p class="lead">This is a simple program to search notice in website Juchao</p>
+            <hr class="my-4">
+            <p class="lead">Use search to get the result, then download files</p>
+        </div>
+
+        <!--input group-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">key words</span>
+            </div>
+            <input type="text" class="form-control" placeholder="separate by space">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">ban words</span>
+            </div>
+            <input type="text" class="form-control" placeholder="separate by space">
+        </div>
+
+        <!--button-->
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-2 my-3 my-md-0">
+                <button type="button" class="btn btn-secondary btn-block">Search</button>
+            </div>
+            <div class="col-12 col-md-3 offset-md-5">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">file size limitation</span>
+                    </div>
+                    <input type="text" class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text">MB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-2">
+                <button type="button" class="btn btn-secondary btn-block">Download</button>
+            </div>
+        </div>
+    </main>
+
+
+    <!--bootstrap-->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+    <!--navbar-->
+    <script src="/template-navbar/navbar.js"></script>
+
+    <!--secondary-navbar-->
+    <script src="../template-secondary-navbar/navbar.js"></script>
+</body>
+
+</html>

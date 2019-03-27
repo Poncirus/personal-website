@@ -3,7 +3,7 @@
 ******************************************/
 $(document).ready(function () {
     // load secondary-navbar
-    $("#secondary-navbar").load("./template-secondary-navbar/navbar.html", function () {
+    $("#secondary-navbar").load("/tools/template-secondary-navbar/navbar.html", function () {
         //set current tag
         if (!!$("#secondary-navbar").attr("current-page")) {
             $("#secondary-navbar .nav-link").each(function () {
