@@ -6,7 +6,7 @@ $(document).ready(function () {
     $("#navbar").load("/template-navbar/navbar.html", function () {
         //set current tag
         if (!!$("#navbar").attr("current-page")) {
-            $(".nav-item").each(function () {
+            $("#navbar .nav-item").each(function () {
                 if (!!$(this).attr("tag")) {
                     // tag in navbar.html == current-page
                     if ($(this).attr("tag") == $("#navbar").attr("current-page")) {
