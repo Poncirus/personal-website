@@ -5,10 +5,8 @@
 
 package main
 
-import (
-    "net/http"
-    "log"
-)
+import "net/http"
+import "log"
 
 /********************************************************************
     func:   defaultRoute
@@ -24,7 +22,7 @@ func defaultRoute(w http.ResponseWriter, r *http.Request) {
 func main() {
     // set route
     http.HandleFunc("/", defaultRoute)
-    http.HandleFunc("/notice-search/", noticeSearch)
+    http.HandleFunc("/go/notice-search", noticeSearch)
 
     // set listen port
     err := http.ListenAndServe(":8081", nil)
