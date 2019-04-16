@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--title setting-->
-    <title>橘生淮北 - Tools</title>
+    <title>橘生淮北 - Sign In</title>
 
     <!--favicon setting-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -25,29 +25,27 @@
     <!--navbar-->
     <link rel="stylesheet" href="/template-navbar/navbar.css">
 
-    <!--navbar-->
-    <link rel="stylesheet" href="./template-secondary-navbar/navbar.css">
+    <!--sign-in-->
+    <link rel="stylesheet" href="./sign.css">
 </head>
 
 <body>
     <!--navbar-->
-    <div id="navbar" current-page="Tools">navbar loading</div>
+    <div id="navbar" current-page="Sign-in">navbar loading</div>
 
-    <!--secondary navbar-->
-    <div id="secondary-navbar" current-page="Tool List">secondary navbar loading</div>
-
-    <main class="container mt-4" role="main">
-        <div class="row mx-3">
-            <div class="card border shadow rounded col-md-3 col-12">
-                <div class="card-body">
-                    <h4 class="card-title">Notice Search</h4>
-                    <span class="card-text">Search notice in website Juchao</span>
-                    <a href="notice-search" class="stretched-link"></a>
-                </div>
+    <!--sign in form-->
+    <main class="container mt-4 text-center" role="main">
+        <form class="form-signin">
+            <img width="128" height="128" class="mb-5" alt="" src="/android-chrome-256x256.png">
+            <input class="form-control" id="username" autofocus="" required="" type="username" placeholder="Username">
+            <input class="form-control" id="password" required="" type="password" placeholder="Password">
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="remember">
+                <label class="custom-control-label" for="remember">Remember me</label>
             </div>
-        </div>
+            <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button>
+        </form>
     </main>
-
 
     <!--bootstrap-->
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
@@ -56,9 +54,6 @@
 
     <!--navbar-->
     <script src="/template-navbar/navbar.js"></script>
-
-    <!--secondary-navbar-->
-    <script src="./template-secondary-navbar/navbar.js"></script>
 </body>
 
 </html>
