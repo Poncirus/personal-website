@@ -1,0 +1,45 @@
+package main
+
+import "fmt"
+import "net/http"
+import "crypto/sha256"
+import "encoding/hex"
+import "./Database"
+
+// responce send to JS
+type SignInResponce struct {
+	Result string
+}
+
+func signIn(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("---------------------------------------Sign In---------------------------------------")
+
+	// get request
+	r.ParseForm()
+	form := r.Form
+	username := form["username"][0]
+	password := form["password"][0]
+
+	// log
+	fmt.Println("username: ", username, ", password: ", password)
+
+	var responce SignInResponce
+
+	dbPassword := Database.FindPassword(username)
+	if dbPassword == nil {
+		responce.Result = "Fail"
+		fmt.Println("Login fail, cannot find username")
+	} else {
+		crypto := sha256.New()
+		crypto.Write([]byte(password))
+		cryptoPassword := hex.EncodeToString(crypto.Sum(nil))
+		fmt.Println(cryptoPassword)
+		if *dbPassword == cryptoPassword {
+			responce.Result = "Success"
+			fmt.Println("Login success")
+		} else {
+			responce.Result = "Fail"
+			fmt.Println("Login fail, password incorrect")
+		}
+	}
+}

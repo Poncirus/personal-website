@@ -1,13 +1,15 @@
+/********************************************************************
+    file:   notice-search.go
+    brief:  search article from website JuChao
+********************************************************************/
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-	"net/http"
-	"net/url"
-	"strings"
-)
+import "encoding/json"
+import "fmt"
+import "io/ioutil"
+import "net/http"
+import "net/url"
+import "strings"
 
 // json structure for stock info from juchao
 // the first letter must be upper-case
@@ -54,7 +56,16 @@ type JsonResponce struct {
 	Stock []Announcement
 }
 
+/********************************************************************
+    func:   noticeSearch
+    brief:  search article from website JuChao
+	args:   w - responseWriter
+			r - request
+    return:
+********************************************************************/
 func noticeSearch(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("------------------------------------Notice Search------------------------------------")
+
 	// get request
 	r.ParseForm()
 	form := r.Form
@@ -83,6 +94,8 @@ func noticeSearch(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
+		fmt.Println("Search result:", *info)
+
 		// name searched and result are different
 		if info.Zwjc != c {
 			alert = append(alert, Alert{"Searching for " + c + ", but the result is " + info.Zwjc, "warning"})
@@ -110,6 +123,9 @@ func noticeSearch(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("error: ", err)
 	}
 	fmt.Fprintf(w, string(jsonByte))
+
+	fmt.Println("Return:", string(jsonByte))
+	fmt.Println("-------------------------------------------------------------------------------------")
 }
 
 /********************************************************************
@@ -188,8 +204,8 @@ func pdfListGet(info StockInfo, key string, ban []string) *AnnoSearch {
 	// remove ban word
 	for _, b := range ban {
 		for i, t := range res.Announcements {
-			if(strings.Contains(t.AnnouncementTitle, b)){
-				res.Announcements = append(res.Announcements[:i], res.Announcements[i + 1:]...)
+			if strings.Contains(t.AnnouncementTitle, b) {
+				res.Announcements = append(res.Announcements[:i], res.Announcements[i+1:]...)
 			}
 		}
 	}

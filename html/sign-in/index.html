@@ -35,7 +35,7 @@
 
     <!--sign in form-->
     <main class="container mt-4 text-center" role="main">
-        <form class="form-signin">
+        <div class="form-signin">
             <img width="128" height="128" class="mb-5" alt="" src="/android-chrome-256x256.png">
             <input class="form-control" id="username" autofocus="" required="" type="username" placeholder="Username">
             <input class="form-control" id="password" required="" type="password" placeholder="Password">
@@ -43,9 +43,27 @@
                 <input type="checkbox" class="custom-control-input" id="remember">
                 <label class="custom-control-label" for="remember">Remember me</label>
             </div>
-            <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button>
-        </form>
+            <button class="btn btn-lg btn-secondary btn-block" id="sign">Sign in</button>
+        </div>
     </main>
+
+    <!--modal result-->
+    <div class="modal fade" id="result" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Loading</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body">Loading</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--bootstrap-->
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
@@ -54,6 +72,15 @@
 
     <!--navbar-->
     <script src="/template-navbar/navbar.js"></script>
+
+    <!--js-sha256-->
+    <script src="/node_modules/js-sha256/build/sha256.min.js"></script>
+
+    <!--js-cookie-->
+    <script src="/node_modules/js-cookie/src/js.cookie.js"></script>
+
+    <!--sign action-->
+    <script src="./sign.js"></script>
 </body>
 
 </html>
