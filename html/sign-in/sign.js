@@ -21,13 +21,11 @@ $("#sign").click(function () {
                 setResult(data, "Connection Fail");
                 return;
             }
-
             // parse data to json object
             var json = JSON.parse(data);
 
-            if (json.Status == "Success") {
-                var remenber = $("remember").val();
-                if (remember) {
+            if (json.Result == "Success") {
+                if ($("#remember").prop('checked')) {
                     Cookies.set('username', username, { expires: 365 });
                     Cookies.set('password', shaPassword, { expires: 365 });
                 } else {
@@ -53,11 +51,11 @@ $("#sign").click(function () {
 *******************************************************************/
 function setResult(alertJson) {
     const str = alertJson.Str;
-    const status = alertJson.Status;
+    const status = alertJson.Result;
 
     // set modal
-    $("#modal-title").html(status);
-    $("#modal-body").html(str);
+    $("#modal-title").text(status);
+    $("#modal-body").text(str);
 
     // show modal
     $("#result").modal('show');
