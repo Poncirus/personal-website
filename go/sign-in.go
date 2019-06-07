@@ -19,7 +19,9 @@ type SignInResponce struct {
 
 /********************************************************************
     func:   signIn
-    brief:  match password
+	brief:  match password
+			the password is encrypted twice with sha256,
+			then compared with the password in the database
 	args:   w - responseWriter
 			r - request
     return:
