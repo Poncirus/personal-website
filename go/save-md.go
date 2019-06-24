@@ -10,8 +10,8 @@ import "net/http"
 import "os"
 import "./Database"
 
-// responce send to JS
-type SaveMDResponce struct {
+// response send to JS
+type SaveMDResponse struct {
 	Result string
 	Str    string
 }
@@ -44,19 +44,79 @@ func saveMD(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("description: ", description)
 	fmt.Println("markdown: ", md)
 
-	var response SaveMDResponce
+	var response SaveMDResponse
 
 	// check password
 	if !Database.CheckPassword(username, password) {
 		response.Result = "Fail"
 		response.Str = "Log in information invalid"
 	} else {
+		// new folder
 		dir = dir + title
-		os.Mkdir(dir, 755)
+		if err := os.Mkdir(dir, 755) {
+			response.Result = "Fail"
+			response.Str = "Server error"
+			fmt.Println("create folder error: ", err)
+			saveMDBeforeReturn(response)
+			return
+		}
+
+		// save file
+		filename := dir + "/" + title
+		file, err := os.Create(filename)
+		if err {
+			response.Result = "Fail"
+			response.Str = "Server error"
+			fmt.Println("create file error: ", err)
+			saveMDBeforeReturn(response)
+			return
+		}
+
+		_, err := file.Write(md)
+		if err {
+			response.Result = "Fail"
+			response.Str = "Server error"
+			fmt.Println("write file error: ", err)
+			saveMDBeforeReturn(response)
+			return
+		}
+
+		// save description
+		filename := dir + "/description.md"
+		file, err := os.Create(filename)
+		if err {
+			response.Result = "Fail"
+			response.Str = "Server error"
+			fmt.Println("create description error: ", err)
+			saveMDBeforeReturn(response)
+			return
+		}
+
+		_, err := file.Write(description)
+		if err {
+			response.Result = "Fail"
+			response.Str = "Server error"
+			fmt.Println("write description error: ", err)
+			saveMDBeforeReturn(response)
+			return
+		}
+
 		response.Result = "Success"
 		response.Str = "File has been saved"
 	}
 
+	saveMDBeforeReturn(response)
+	return
+}
+
+
+/********************************************************************
+    func:   saveMDBeforeReturn
+	brief:  actions before return
+	args:   response - response to be sent to client
+    return:
+********************************************************************/
+func saveMDBeforeReturn(response SaveMDResponse) {
 	// return
 	jsonByte, err := json.Marshal(response)
 	if err != nil {
