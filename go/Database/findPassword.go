@@ -1,5 +1,5 @@
 /********************************************************************
-    file:   getPassword.go
+    file:   FindPassword.go
     brief:  get password for specified username from database
 ********************************************************************/
 package Database

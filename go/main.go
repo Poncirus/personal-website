@@ -24,6 +24,7 @@ func main() {
 	http.HandleFunc("/", defaultRoute)
 	http.HandleFunc("/go/notice-search", noticeSearch)
 	http.HandleFunc("/go/sign-in", signIn)
+	http.HandleFunc("/go/save-md", saveMD)
 
 	// set listen port
 	err := http.ListenAndServe(":8081", nil)

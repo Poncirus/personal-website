@@ -11,8 +11,8 @@ import "crypto/sha256"
 import "encoding/hex"
 import "./Database"
 
-// responce send to JS
-type SignInResponce struct {
+// response send to JS
+type SignInResponse struct {
 	Result string
 	Str    string
 }
@@ -36,33 +36,33 @@ func signIn(w http.ResponseWriter, r *http.Request) {
 	password := form["password"][0]
 
 	// log
-	fmt.Println("username: ", username, ", password: ", password)
+	fmt.Println("username: ", username)
 
-	var responce SignInResponce
+	var response SignInResponse
 
 	// match password
 	dbPassword := Database.FindPassword(username)
 	if dbPassword == nil {
-		responce.Result = "Fail"
-		responce.Str = "Incorrect username or password"
-		fmt.Println("Login fail, cannot find username")
+		response.Result = "Fail"
+		response.Str = "Incorrect username or password"
+		fmt.Println("Login fail, cannot find user")
 	} else {
 		crypto := sha256.New()
 		crypto.Write([]byte(password))
 		cryptoPassword := hex.EncodeToString(crypto.Sum(nil))
 		fmt.Println(cryptoPassword)
 		if *dbPassword == cryptoPassword {
-			responce.Result = "Success"
+			response.Result = "Success"
 			fmt.Println("Login success")
 		} else {
-			responce.Result = "Fail"
-			responce.Str = "Incorrect username or password"
+			response.Result = "Fail"
+			response.Str = "Incorrect username or password"
 			fmt.Println("Login fail, password incorrect")
 		}
 	}
 
 	// output
-	jsonByte, err := json.Marshal(responce)
+	jsonByte, err := json.Marshal(response)
 	if err != nil {
 		fmt.Println("error: ", err)
 	}

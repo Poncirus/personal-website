@@ -1,19 +1,24 @@
 /********************************
-    sign action
+    editor action
 ********************************/
 
-$("#sign").click(function () {
-    var username = $("#username").val();
-    var password = $("#password").val();
+var firstSaveFlag = true;
 
-    // sha256
-    var shaPassword = sha256(password);
+$("#save").click(function () {
+    var title = $("#title").val();
+    var description = $("#description").val();
+
+    var md = editor.getMarkdown();
 
     // post
-    $.post("/go/sign-in",
+    $.post("/go/save-md",
         {
-            username: username,
-            password: shaPassword
+            username: getUsernameCookie(),
+            password: getPasswordCookie(),
+            title: title,
+            description: description,
+            markdown: md,
+            first: firstSaveFlag
         },
         function (data, status) {
             // request not success
@@ -24,25 +29,14 @@ $("#sign").click(function () {
             // parse data to json object
             var json = JSON.parse(data);
 
-            if (json.Result == "Success") {
-                if ($("#remember").prop('checked')) {
-                    Cookies.set('username', username, { expires: 365 });
-                    Cookies.set('password', shaPassword, { expires: 365 });
-                } else {
-                    Cookies.set('username', username);
-                    Cookies.set('password', shaPassword);
-                }
-
-                window.history.go(-1);
-                return;
-            }
-
             // set result
             setResult(json);
             return;
         });
-});
 
+    // cancel first save flag
+    firstSaveFlag = false;
+});
 
 /*******************************************************************
     func:   setResult
@@ -50,8 +44,8 @@ $("#sign").click(function () {
     args:   alertJson - alert json data
 *******************************************************************/
 function setResult(alertJson) {
-    const status = alertJson.Result;
     const str = alertJson.Str;
+    const status = alertJson.Result;
 
     // set modal
     $("#modal-title").text(status);

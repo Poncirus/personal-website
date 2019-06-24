@@ -1,0 +1,12 @@
+/********************
+editor.md support css
+********************/
+
+body {
+  height: 100%;
+}
+
+html {
+    height: 100%;
+    overflow:hidden;
+}
