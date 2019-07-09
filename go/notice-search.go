@@ -50,8 +50,8 @@ type Announcement struct {
 	Anno []AnnoSearch
 }
 
-// responce send to JS
-type JsonResponce struct {
+// response send to JS
+type JsonResponse struct {
 	Alert []Alert
 	Stock []Announcement
 }
@@ -117,8 +117,8 @@ func noticeSearch(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// set output
-	var jsonResponce JsonResponce = JsonResponce{alert, stock}
-	jsonByte, err := json.Marshal(jsonResponce)
+	var jsonResponse JsonResponse = JsonResponse{alert, stock}
+	jsonByte, err := json.Marshal(jsonResponse)
 	if err != nil {
 		fmt.Println("error: ", err)
 	}
@@ -168,12 +168,12 @@ func stockInfoGet(name string) *StockInfo {
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
 
-	// decode json responce
+	// decode json response
 	var stock []StockInfo
 	err = json.Unmarshal(body, &stock)
 	if err != nil {
 		fmt.Println("error: ", err)
-		fmt.Println("decode json responce in stockInfoGet while excute ", name)
+		fmt.Println("decode json response in stockInfoGet while excute ", name)
 		return nil
 	}
 
@@ -255,12 +255,12 @@ func pdfListGetHttp(info StockInfo, key string, column string, plate string) *An
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
 
-	// decode json responce
+	// decode json response
 	var anno AnnoSearch
 	err = json.Unmarshal(body, &anno)
 	if err != nil {
 		fmt.Println("error: ", err)
-		fmt.Println("decode json responce in pdfListGetHttp")
+		fmt.Println("decode json response in pdfListGetHttp")
 		return nil
 	}
 

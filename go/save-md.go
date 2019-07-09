@@ -11,8 +11,8 @@ import "os"
 import "path/filepath"
 import "./Database"
 
-// responce send to JS
-type SaveMDResponce struct {
+// response send to JS
+type SaveMDResponse struct {
 	Result string
 	Str    string
 }
@@ -49,7 +49,7 @@ func saveMD(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("description: ", description)
 	fmt.Println("markdown: ", md)
 
-	var response SaveMDResponce
+	var response SaveMDResponse
 
 	// check password
 	if !Database.CheckPassword(username, password) {
