@@ -2,10 +2,16 @@
     editor action
 ********************************/
 
-var firstSaveFlag = true;
+originTitle = ""
 
 $("#save").click(function () {
     var title = $("#title").val();
+    if(title == "") {
+        alertJson = { Result: "Fail", Str: "Title cannnot be empty"};
+        setResult(alertJson);
+        return;
+    }
+
     var description = $("#description").val();
 
     var md = editor.getMarkdown();
@@ -18,7 +24,7 @@ $("#save").click(function () {
             title: title,
             description: description,
             markdown: md,
-            first: firstSaveFlag
+            originTitle: originTitle
         },
         function (data, status) {
             // request not success
@@ -28,6 +34,10 @@ $("#save").click(function () {
             }
             // parse data to json object
             var json = JSON.parse(data);
+
+            if(json.Result == "Success") {
+                originTitle = title
+            }
 
             // set result
             setResult(json);
