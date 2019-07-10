@@ -5,8 +5,11 @@
 
 package main
 
-import "net/http"
-import "log"
+import (
+	"fmt"
+	"log"
+	"net/http"
+)
 
 /********************************************************************
     func:   defaultRoute
@@ -16,7 +19,10 @@ import "log"
     return:
 ********************************************************************/
 func defaultRoute(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("---------------------------------Command Not Found-----------------------------------")
 	http.Error(w, "go server command not found", 404)
+	fmt.Println("-------------------------------------------------------------------------------------")
+
 }
 
 func main() {
@@ -24,7 +30,8 @@ func main() {
 	http.HandleFunc("/", defaultRoute)
 	http.HandleFunc("/go/notice-search", noticeSearch)
 	http.HandleFunc("/go/sign-in", signIn)
-	http.HandleFunc("/go/save-md", saveMD)
+	http.HandleFunc("/go/save-article", saveArticle)
+	http.HandleFunc("/go/get-article-list", getArticleList)
 
 	// set listen port
 	err := http.ListenAndServe(":8081", nil)

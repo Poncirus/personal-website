@@ -1,6 +1,6 @@
 /********************************************************************
-    file:   save-md.go
-    brief:  save markdown file
+    file:   save-article.go
+    brief:  save article (md file)
 ********************************************************************/
 package main
 
@@ -12,20 +12,20 @@ import "path/filepath"
 import "./Database"
 
 // response send to JS
-type SaveMDResponse struct {
+type SaveArticleResponse struct {
 	Result string
 	Str    string
 }
 
 /********************************************************************
-	func:   saveMD
+	func:   saveArticle
 	brief:  save markdown file
 	args:   w - responseWriter
 			r - request
 	return:
 ********************************************************************/
-func saveMD(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("---------------------------------------Save MD---------------------------------------")
+func saveArticle(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("------------------------------------Save Article-------------------------------------")
 
 	// get dir
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
@@ -49,13 +49,15 @@ func saveMD(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("description: ", description)
 	fmt.Println("markdown: ", md)
 
-	var response SaveMDResponse
+	var response SaveArticleResponse
 
 	// check password
 	if !Database.CheckPassword(username, password) {
 		response.Result = "Fail"
 		response.Str = "Log in information invalid"
 	} else {
+		e := false // =True if error
+
 		dir = dir + title + "/"
 		_, err := os.Stat(dir)
 
@@ -69,6 +71,7 @@ func saveMD(w http.ResponseWriter, r *http.Request) {
 			err = os.RemoveAll(dir)
 			if err != nil {
 				fmt.Println(err)
+				e = true
 			}
 
 			// mkdir
@@ -76,34 +79,44 @@ func saveMD(w http.ResponseWriter, r *http.Request) {
 			err := os.Mkdir(dir, 755)
 			if err != nil {
 				fmt.Println(err)
+				e = true
 			}
 
 			// create md file
 			mdFile, err := os.OpenFile(dir+title+".md", os.O_RDWR|os.O_CREATE, 0666)
 			if err != nil {
 				fmt.Println(err)
+				e = true
 			}
 
 			// write markdown file
 			_, err = mdFile.WriteString(md)
 			if err != nil {
 				fmt.Println(err)
+				e = true
 			}
 
 			// create md file
 			desFile, err := os.OpenFile(dir+"description.md", os.O_RDWR|os.O_CREATE, 0666)
 			if err != nil {
 				fmt.Println(err)
+				e = true
 			}
 
 			// write markdown file
 			_, err = desFile.WriteString(description)
 			if err != nil {
 				fmt.Println(err)
+				e = true
 			}
 
-			response.Result = "Success"
-			response.Str = "File has been saved"
+			if e {
+				response.Result = "Fail"
+				response.Str = "Server error"
+			} else {
+				response.Result = "Success"
+				response.Str = "File has been saved"
+			}
 		}
 	}
 

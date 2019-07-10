@@ -17,7 +17,7 @@ $("#save").click(function () {
     var md = editor.getMarkdown();
 
     // post
-    $.post("/go/save-md",
+    $.post("/go/save-article",
         {
             username: getUsernameCookie(),
             password: getPasswordCookie(),
