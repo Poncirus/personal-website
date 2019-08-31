@@ -31,6 +31,7 @@ func main() {
 	http.HandleFunc("/go/notice-search", noticeSearch)
 	http.HandleFunc("/go/sign-in", signIn)
 	http.HandleFunc("/go/save-article", saveArticle)
+	http.HandleFunc("/go/delete-article", deleteArticle)
 	http.HandleFunc("/go/get-article-list", getArticleList)
 
 	// set listen port

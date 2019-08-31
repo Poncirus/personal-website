@@ -4,12 +4,15 @@
 ********************************************************************/
 package main
 
-import "encoding/json"
-import "fmt"
-import "net/http"
-import "os"
-import "path/filepath"
-import "./Database"
+import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
+	"path/filepath"
+
+	"./Database"
+)
 
 // response send to JS
 type SaveArticleResponse struct {
@@ -28,11 +31,11 @@ func saveArticle(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("------------------------------------Save Article-------------------------------------")
 
 	// get dir
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	d, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
 		fmt.Println(err)
 	}
-	dir = dir + "/../static/markdown/"
+	d = d + "/../static/markdown/"
 
 	// get request
 	r.ParseForm()
@@ -55,10 +58,13 @@ func saveArticle(w http.ResponseWriter, r *http.Request) {
 	if !Database.CheckPassword(username, password) {
 		response.Result = "Fail"
 		response.Str = "Log in information invalid"
+	} else if title == "" {
+		response.Result = "Fail"
+		response.Str = "Title cannot be empty"
 	} else {
 		e := false // =True if error
 
-		dir = dir + title + "/"
+		dir := d + title + "/"
 		_, err := os.Stat(dir)
 
 		// check path exist
@@ -67,6 +73,17 @@ func saveArticle(w http.ResponseWriter, r *http.Request) {
 			response.Str = "File already exist"
 			fmt.Println("File already exist")
 		} else {
+			if originTitle != "" {
+				// remove original dir
+				originDir := d + originTitle + "/"
+				fmt.Println("remove dir: " + originDir)
+				err = os.RemoveAll(originDir)
+				if err != nil {
+					fmt.Println(err)
+					e = true
+				}
+			}
+
 			// remove dir
 			err = os.RemoveAll(dir)
 			if err != nil {
