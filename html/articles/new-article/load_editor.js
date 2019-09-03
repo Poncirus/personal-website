@@ -5,7 +5,7 @@
 var editor;
 
 $(document).ready(function () {
-    //calculate height
+    // calculate height
     if(document.body.clientWidth > 1000){
         var hoffset = 250;
     } else {

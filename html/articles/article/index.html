@@ -38,20 +38,17 @@
     <div id="navbar" current-page="Articles">navbar loading</div>
 
     <!--secondary navbar-->
-    <div id="secondary-navbar" current-page="New Article">secondary navbar loading</div>
+    <div id="secondary-navbar" current-page="">secondary navbar loading</div>
 
     <main class="container mt-4" role="main">
         <div class="row justify-content-between">
-            <div class="input-group mb-3 col-12 col-md">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Title</span>
-                </div>
-                <input type="text" class="form-control" id="title">
+            <div class="mb-2 col-12 col-md">
+                <h3 id="title">Title loading</h3>
             </div>
-            <div class="col-12 col-md-3 mb-3">
+            <div class="col-12 col-md-3 mb-2">
                 <div class="row">
                     <div class="col-6">
-                        <button type="button" class="btn btn-success w-100" id="save">Save</button>
+                        <button type="button" class="btn btn-success w-100" id="edit">Edit</button>
                     </div>
                     <div class="col-6">
                         <button type="button" class="btn btn-danger w-100" id="delete">Delete</button>
@@ -60,11 +57,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-group mb-3 col-12">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Description</span>
-                </div>
-                <input type="text" class="form-control" id="description">
+            <div class="input-group mb-2 col-12">
+                <h6 id="description">Description loading</h6>
             </div>
         </div>
 
@@ -106,6 +100,7 @@
 
     <!--editor.md-->
     <script src="/node_modules/editor.md/editormd.min.js"></script>
+    <script src="./get_url_param.js"></script>
     <script src="./load_editor.js"></script>
     <script src="./editor_action.js"></script>
 

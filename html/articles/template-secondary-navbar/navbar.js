@@ -15,7 +15,9 @@ $(document).ready(function () {
                 }
             })
         } else {
-            alert("do not set current-page");
+            if ($("#secondary-navbar").attr("current-page") != "") {
+                alert("do not set current-page");
+            }
         }
     });
 });

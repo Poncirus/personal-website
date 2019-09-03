@@ -21,7 +21,7 @@ $(document).ready(function () {
                 if (json.ArticleInfo.hasOwnProperty(i)) {
                     const a = json.ArticleInfo[i];
                     html = html + "<div class='text-muted small py-2 px-2 border-bottom border-gray'  style='transform: rotate(0);'> \
-                    <h5 class='text-gray-dark'>" + a.Title + "</h5>" + a.Description + "<a href='../article?title=" + a.Title + "' class='stretched-link'></a></div>";
+                    <h5 class='text-dark font-weight-bold'>" + a.Title + "</h5>" + a.Description + "<a href='../article?title=" + a.Title + "' class='stretched-link'></a></div>";
                 }
             }
 

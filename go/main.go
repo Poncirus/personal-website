@@ -33,6 +33,7 @@ func main() {
 	http.HandleFunc("/go/save-article", saveArticle)
 	http.HandleFunc("/go/delete-article", deleteArticle)
 	http.HandleFunc("/go/get-article-list", getArticleList)
+	http.HandleFunc("/go/get-article", getArticle)
 
 	// set listen port
 	err := http.ListenAndServe(":8082", nil)
