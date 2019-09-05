@@ -30,7 +30,7 @@
 
     <!--editor.md-->
     <link rel="stylesheet" href="/node_modules/editor.md/css/editormd.min.css">
-    <link rel="stylesheet" href="../editor/editor.css">
+    <link rel="stylesheet" href="../editor-style/editor.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
     <div id="navbar" current-page="Articles">navbar loading</div>
 
     <!--secondary navbar-->
-    <div id="secondary-navbar" current-page="New Article">secondary navbar loading</div>
+    <div id="secondary-navbar" current-page="">secondary navbar loading</div>
 
     <main class="container mt-4" role="main">
         <div class="row justify-content-between">
@@ -106,6 +106,7 @@
 
     <!--editor.md-->
     <script src="/node_modules/editor.md/editormd.min.js"></script>
+    <script src="./get_url_param.js"></script>
     <script src="./load_editor.js"></script>
     <script src="./editor_action.js"></script>
 

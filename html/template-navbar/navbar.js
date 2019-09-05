@@ -20,7 +20,7 @@ $(document).ready(function () {
 
         // set username
         var username = getUsernameCookie();
-        if(username != ""){
+        if(username != null){
             $("#sign-in").html(username);
             $("#sign-in").attr("href", "#"); 
         }

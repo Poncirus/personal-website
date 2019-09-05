@@ -18,7 +18,8 @@ $("#sign").click(function () {
         function (data, status) {
             // request not success
             if (status != "success") {
-                setResult(data, "{Result: 'Fail', Str: 'Connection Fail'}");
+                var json = JSON.parse('{"Result":"Fail", "Str":"Connection Fail"}');
+                setResult(json);
                 return;
             }
             // parse data to json object

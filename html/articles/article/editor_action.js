@@ -5,7 +5,7 @@
 originTitle = ""
 
 $("#edit").click(function () {
-    $(location).prop('href', '../edit-article?title=' + getUrlParam("title"));
+    $(location).prop('href', '../editor?title=' + getUrlParam("title"));
 });
 
 $("#delete").click(function () {
@@ -19,7 +19,8 @@ $("#delete").click(function () {
         function (data, status) {
             // request not success
             if (status != "success") {
-                setResult(data, "{Result: 'Fail', Str: 'Connection Fail'}");
+                var json = JSON.parse('{"Result":"Fail", "Str":"Connection Fail"}');
+                setResult(json);
                 return;
             }
             // parse data to json object

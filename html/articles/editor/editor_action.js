@@ -2,13 +2,13 @@
     editor action
 ********************************/
 
-originTitle = ""
+originTitle = getUrlParam("title") != null ? getUrlParam("title") : "";
 
 $("#save").click(function () {
     var title = $("#title").val();
     if (title == "") {
-        alertJson = { Result: "Fail", Str: "Title cannnot be empty" };
-        setResult(alertJson);
+        var json = JSON.parse('{"Result":"Fail", "Str":"Title cannot be empty"}');
+        setResult(json);
         return;
     }
 
@@ -29,7 +29,8 @@ $("#save").click(function () {
         function (data, status) {
             // request not success
             if (status != "success") {
-                setResult(data, "{Result: 'Fail', Str: 'Connection Fail'}");
+                var json = JSON.parse('{"Result":"Fail", "Str":"Connection Fail"}');
+                setResult(json);
                 return;
             }
             // parse data to json object
@@ -59,7 +60,8 @@ $("#delete").click(function () {
         function (data, status) {
             // request not success
             if (status != "success") {
-                setResult(data, "{Result: 'Fail', Str: 'Connection Fail'}");
+                var json = JSON.parse('{"Result":"Fail", "Str":"Connection Fail"}');
+                setResult(json);
                 return;
             }
             // parse data to json object

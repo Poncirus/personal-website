@@ -17,7 +17,7 @@ function getUsernameCookie()
     var c = ca[i].trim();
     if (c.indexOf(name)==0) return c.substring(name.length,c.length);
   }
-  return "";
+  return null;
 }
 
 
@@ -35,5 +35,5 @@ function getPasswordCookie()
     var c = ca[i].trim();
     if (c.indexOf(name)==0) return c.substring(name.length,c.length);
   }
-  return "";
+  return null;
 }
