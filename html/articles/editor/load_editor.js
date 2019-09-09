@@ -22,7 +22,10 @@ $(document).ready(function () {
         loadEditor("# <title>");
         $("#secondary-navbar").attr("current-page", "New Article");
     } else {
-        $.get("/go/get-article?title=" + title,
+        $.post("/go/get-article?title=",
+        {
+            title: title
+        },
         function (data, status) {
             // request not success
             if (status != "success") {

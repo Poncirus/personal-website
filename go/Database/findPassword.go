@@ -1,10 +1,9 @@
 /********************************************************************
-    file:   FindPassword.go
+    file:   findPassword.go
     brief:  get password for specified username from database
 ********************************************************************/
 package Database
 
-import "database/sql"
 import _ "github.com/go-sql-driver/mysql"
 
 /********************************************************************
@@ -14,11 +13,7 @@ import _ "github.com/go-sql-driver/mysql"
     return: password (nil if cannot find username)
 ********************************************************************/
 func FindPassword(username string) *string {
-	// init database
-	db, err := sql.Open("mysql", "web:Lhw1997424220!@/web")
-	if err != nil {
-		panic(err.Error())
-	}
+	db := ConnectDatabase()
 	defer db.Close()
 
 	// search
