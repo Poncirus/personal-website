@@ -22,28 +22,28 @@ $(document).ready(function () {
         loadEditor("# <title>");
         $("#secondary-navbar").attr("current-page", "New Article");
     } else {
-        $.post("/go/get-article?title=",
-        {
-            title: title
-        },
-        function (data, status) {
-            // request not success
-            if (status != "success") {
-                return;
-            }
-            // parse data to json object
-            var json = JSON.parse(data);
+        $.post("/go/get-article",
+            {
+                title: title
+            },
+            function (data, status) {
+                // request not success
+                if (status != "success") {
+                    return;
+                }
+                // parse data to json object
+                var json = JSON.parse(data);
 
-            if (json.Result != "Success") {
-                return;
-            }
+                if (json.Result != "Success") {
+                    return;
+                }
 
-            $("#title").val(json.Title);
-            $("#description").val(json.Description);
-            md = json.Markdown;
+                $("#title").val(json.Title);
+                $("#description").val(json.Description);
+                md = json.Markdown;
 
-            loadEditor(md);
-        });
+                loadEditor(md);
+            });
     }
 
 });
