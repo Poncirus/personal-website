@@ -36,7 +36,7 @@ func main() {
 	http.HandleFunc("/go/get-article", getArticle)
 
 	// set listen port
-	err := http.ListenAndServe(":8082", nil)
+	err := http.ListenAndServe(":8081", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

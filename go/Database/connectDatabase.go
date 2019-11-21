@@ -18,7 +18,7 @@ import (
 ********************************************************************/
 func ConnectDatabase() *sql.DB {
 	// init database
-	db, err := sql.Open("mysql", "web:Lhw1997424220!@tcp(liaohanwen.com)/web")
+	db, err := sql.Open("mysql", "remote-web:Lhw1997424220!@tcp(liaohanwen.com)/web")
 	if err != nil {
 		panic(err.Error())
 	}
