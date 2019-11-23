@@ -2,7 +2,7 @@
     file:   checkPassword.go
     brief:  check password for specified username from database
 ********************************************************************/
-package Database
+package database
 
 import (
 	"crypto/sha256"

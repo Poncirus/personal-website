@@ -2,7 +2,7 @@
     file:   findPassword.go
     brief:  get password for specified username from database
 ********************************************************************/
-package Database
+package database
 
 import _ "github.com/go-sql-driver/mysql"
 

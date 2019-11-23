@@ -2,7 +2,7 @@
     file:   connectDatabase.go
     brief:  connect database
 ********************************************************************/
-package Database
+package database
 
 import (
 	"database/sql"

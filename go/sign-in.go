@@ -9,7 +9,7 @@ import "net/http"
 import "encoding/json"
 import "crypto/sha256"
 import "encoding/hex"
-import "./Database"
+import "./database"
 
 // response send to JS
 type SignInResponse struct {
@@ -24,7 +24,8 @@ type SignInResponse struct {
 			then compared with the password in the database
 	args:   w - responseWriter
 			r - request
-    return:
+	return:
+	
 ********************************************************************/
 func signIn(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("---------------------------------------Sign In---------------------------------------")
@@ -41,7 +42,7 @@ func signIn(w http.ResponseWriter, r *http.Request) {
 	var response SignInResponse
 
 	// match password
-	dbPassword := Database.FindPassword(username)
+	dbPassword := database.FindPassword(username)
 	if dbPassword == nil {
 		response.Result = "Fail"
 		response.Str = "Incorrect username or password"

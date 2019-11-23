@@ -11,7 +11,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"./Database"
+	"./database"
 )
 
 // response send to JS
@@ -55,7 +55,7 @@ func saveArticle(w http.ResponseWriter, r *http.Request) {
 	var response SaveArticleResponse
 
 	// check password
-	if !Database.CheckPassword(username, password) {
+	if !database.CheckPassword(username, password) {
 		response.Result = "Fail"
 		response.Str = "Log in information invalid"
 	} else if title == "" {
