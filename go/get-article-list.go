@@ -13,13 +13,13 @@ import (
 	"path/filepath"
 )
 
-// article info structure
+// ArticleInfo article info structure
 type ArticleInfo struct {
 	Title       string
 	Description string
 }
 
-// response send to JS
+// GetArticleListResponse response send to JS
 type GetArticleListResponse struct {
 	Result      string
 	ArticleInfo []ArticleInfo

@@ -14,7 +14,7 @@ import (
 	"./database"
 )
 
-// response send to JS
+// SaveArticleResponse response send to JS
 type SaveArticleResponse struct {
 	Result string
 	Str    string

@@ -11,7 +11,7 @@ import "crypto/sha256"
 import "encoding/hex"
 import "./database"
 
-// response send to JS
+// SignInResponse response send to JS
 type SignInResponse struct {
 	Result string
 	Str    string

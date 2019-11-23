@@ -13,7 +13,7 @@ import (
 	"path/filepath"
 )
 
-// response send to JS
+// GetArticleResponse response send to JS
 type GetArticleResponse struct {
 	Result      string
 	Str         string

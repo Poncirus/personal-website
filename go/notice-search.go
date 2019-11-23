@@ -11,8 +11,7 @@ import "net/http"
 import "net/url"
 import "strings"
 
-// json structure for stock info from juchao
-// the first letter must be upper-case
+// StockInfo json structure for stock info from juchao
 type StockInfo struct {
 	OrgId    string
 	Category string
@@ -21,7 +20,7 @@ type StockInfo struct {
 	Zwjc     string
 }
 
-// announcement structure
+// Anno announcement structure
 type Anno struct {
 	AnnouncementTitle string
 	AnnouncementTime  int
@@ -29,29 +28,29 @@ type Anno struct {
 	AdjunctSize       int
 }
 
-// json structure for announcement search from juchao
+// AnnoSearch json structure for announcement search from juchao
 type AnnoSearch struct {
 	Key               string
 	TotalAnnouncement int
 	Announcements     []Anno
 }
 
-// correspond to alert in JS
+// Alert correspond to alert in JS
 // status must be (success, warning, danger)
 type Alert struct {
 	Str    string
 	Status string
 }
 
-// correspond to announcement in JS
+// Announcement correspond to announcement in JS
 type Announcement struct {
 	Info StockInfo
 	Ban  []string
 	Anno []AnnoSearch
 }
 
-// response send to JS
-type JsonResponse struct {
+// JSONResponse response send to JS
+type JSONResponse struct {
 	Alert []Alert
 	Stock []Announcement
 }
@@ -117,7 +116,7 @@ func noticeSearch(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// set output
-	var jsonResponse JsonResponse = JsonResponse{alert, stock}
+	var jsonResponse JSONResponse = JSONResponse{alert, stock}
 	jsonByte, err := json.Marshal(jsonResponse)
 	if err != nil {
 		fmt.Println("error: ", err)
@@ -195,10 +194,10 @@ func pdfListGet(info StockInfo, key string, ban []string) *AnnoSearch {
 
 	if strings.HasPrefix(info.Code, "0") || strings.HasPrefix(info.Code, "3") {
 		// try to get pdf list from shenzhen
-		res = pdfListGetHttp(info, key, "szse", "sz")
+		res = pdfListGetHTTP(info, key, "szse", "sz")
 	} else {
 		// try to get pdf list from shanghai
-		res = pdfListGetHttp(info, key, "sse", "shmb")
+		res = pdfListGetHTTP(info, key, "sse", "shmb")
 	}
 
 	// remove ban word
@@ -222,7 +221,7 @@ func pdfListGet(info StockInfo, key string, ban []string) *AnnoSearch {
 			plate - search key (shmb, sz)
     return: announcements
 ********************************************************************/
-func pdfListGetHttp(info StockInfo, key string, column string, plate string) *AnnoSearch {
+func pdfListGetHTTP(info StockInfo, key string, column string, plate string) *AnnoSearch {
 
 	// parse http request
 	urlPost := "http://www.cninfo.com.cn/new/hisAnnouncement/query"
@@ -248,7 +247,7 @@ func pdfListGetHttp(info StockInfo, key string, column string, plate string) *An
 
 	if err != nil {
 		fmt.Println("error: ", err)
-		fmt.Println("http connection fail in pdfListGetHttp")
+		fmt.Println("http connection fail in pdfListGetHTTP")
 		return nil
 	}
 
@@ -260,7 +259,7 @@ func pdfListGetHttp(info StockInfo, key string, column string, plate string) *An
 	err = json.Unmarshal(body, &anno)
 	if err != nil {
 		fmt.Println("error: ", err)
-		fmt.Println("decode json response in pdfListGetHttp")
+		fmt.Println("decode json response in pdfListGetHTTP")
 		return nil
 	}
 

@@ -14,7 +14,7 @@ import (
 	"./database"
 )
 
-// response send to JS
+// DeleteArticleResponse response send to JS
 type DeleteArticleResponse struct {
 	Result string
 	Str    string
