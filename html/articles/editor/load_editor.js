@@ -63,7 +63,12 @@ function loadEditor(md) {
         height: height,
         markdown: md,
         htmlDecode: "style,script,iframe,sub,sup|on*",  // html support
-        path: "/node_modules/editor.md/lib/"
+        path: "/node_modules/editor.md/lib/",
+
+        // image upload
+        imageUpload    : true,
+        imageFormats   : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+        imageUploadURL : "/go/image-upload",
     });
 
     // set editor z-index

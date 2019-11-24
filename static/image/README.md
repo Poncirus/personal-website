@@ -1,0 +1,1 @@
+It is the path where image store.
