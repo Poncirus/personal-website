@@ -12,6 +12,7 @@ import (
 	"path/filepath"
 
 	"./database"
+	"github.com/tidwall/gjson"
 )
 
 // DeleteArticleResponse response send to JS
@@ -35,7 +36,7 @@ func deleteArticle(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	dir = dir + "/../static/markdown/"
+	dir = dir + gjson.Get(Config, "markdown.fileRoot").String()
 
 	// get request
 	r.ParseForm()

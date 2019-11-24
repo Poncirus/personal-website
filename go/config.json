@@ -1,0 +1,10 @@
+{
+    "web": {
+        "port": 8081
+    },
+    "markdown": {
+        "fileRoot": "/../static/markdown/",
+        "imageRoot": "/../static/image/",
+        "imageURLRoot": "/static/image/"
+    }
+}

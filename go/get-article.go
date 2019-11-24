@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"github.com/tidwall/gjson"
 )
 
 // GetArticleResponse response send to JS
@@ -37,7 +38,7 @@ func getArticle(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	dir = dir + "/../static/markdown/"
+	dir = dir + gjson.Get(Config, "markdown.fileRoot").String()
 
 	// get request
 	r.ParseForm()
