@@ -41,9 +41,9 @@ $(document).ready(function () {
 
             // calculate height
             if (document.body.clientWidth > 1000) {
-                var hoffset = 250;
+                var hoffset = 230;
             } else {
-                var hoffset = 300;
+                var hoffset = 240;
             }
 
             // load editor
@@ -61,7 +61,7 @@ $(document).ready(function () {
             });
 
             // set editor z-index
-            $("#editor").css("z-index", 1030);
+            $("#editor").css("z-index", 1025);
         })
 
 

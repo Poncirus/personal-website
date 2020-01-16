@@ -45,18 +45,18 @@ function getArticleHtml(info) {
     }
     return "<div class='text-muted small py-2 px-2 border-bottom border-gray' style='transform: rotate(0);'> \
                 <div class='row'> \
-                    <div class='col-6'> \
+                    <div class='col-12 col-md-6'> \
                         <h5 class='text-dark font-weight-bold'>" + info.Title + "</h5> \
                     </div> \
-                    <div class='col-6 text-right'> \
+                    <div class='d-none d-md-block col-md-6 text-right'> \
                         Created: " + parseTime(info.CreateTime) + " &nbsp; Modified: " + parseTime(info.LastModification) + " \
                     </div> \
                 </div> \
                 <div class='row'> \
-                    <div class='col-8'> \
+                    <div class='col-12 col-md-8'> \
                         " + info.Description + " \
                     </div> \
-                    <div class='col-4 text-right'> \
+                    <div class='d-none d-md-block col-md-4 text-right'> \
                         " + tag + " \
                     </div> \
                 </div> \

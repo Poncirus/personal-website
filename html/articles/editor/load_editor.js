@@ -84,5 +84,5 @@ function loadEditor(md) {
     });
 
     // set editor z-index
-    $("#editor").css("z-index", 1030);
+    $("#editor").css("z-index", 1025);
 }
