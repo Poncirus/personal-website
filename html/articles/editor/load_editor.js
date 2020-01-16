@@ -4,6 +4,10 @@
 
 var editor;
 
+var Article = new Object();
+Article.Tags = [];
+Article.CreateTime = "";
+
 $(document).ready(function () {
     // check login status
     if (getUsernameCookie() == null || getPasswordCookie() == null) {
@@ -17,14 +21,16 @@ $(document).ready(function () {
     }
 
     // load article
-    var title = getUrlParam("title");
-    if (title == null) {
+    var id = getUrlParam("id");
+    if (id == null) {
         loadEditor("# <title>");
         $("#secondary-navbar").attr("current-page", "New Article");
+        Article.ID = "";
+        loadTags([]);
     } else {
         $.post("/go/get-article",
             {
-                title: title
+                id: id
             },
             function (data, status) {
                 // request not success
@@ -38,11 +44,17 @@ $(document).ready(function () {
                     return;
                 }
 
-                $("#title").val(json.Title);
-                $("#description").val(json.Description);
-                md = json.Markdown;
+                Article = json.Article;
+                if (Article.Tags == null) {
+                    Article.Tags = [];
+                }
+
+                $("#title").val(Article.Title);
+                $("#description").val(Article.Description);
+                md = Article.Markdown;
 
                 loadEditor(md);
+                loadTags(Article.Tags);
             });
     }
 

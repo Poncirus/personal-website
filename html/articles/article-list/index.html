@@ -37,8 +37,33 @@
     <div id="secondary-navbar" current-page="Article List">secondary navbar loading</div>
 
     <main class="container mt-4" role="main">
-        <div id="articles" class="my-3 pb-3 px-3 bg-white rounded shadow">
-            <h3>article list loading</h3>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div id="articles" class="py-2 px-2 bg-white rounded shadow border mb-3">
+                    <h3>article list loading</h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card shadow mb-3">
+                    <div class="card-header">
+                        Search
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Title">
+                            <button type="button" class="btn btn-outline-secondary ml-3">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow mb-3">
+                    <div class="card-header">
+                        Tags
+                    </div>
+                    <div class="card-body p-3" id="tags">
+                        tags loading
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -54,8 +79,15 @@
     <!--secondary-navbar-->
     <script src="../template-secondary-navbar/navbar.js"></script>
 
+    <!--time parse-->
+    <script src="/js/rfc3339date.js/rfc3339date.js"></script>
+    <script src="/js/time.js"></script>
+
     <!--load-articles-->
     <script src="./load_articles.js"></script>
+
+    <!--tags-->
+    <script src="./tags.js"></script>
 </body>
 
 </html>

@@ -45,20 +45,17 @@
             <div class="mb-2 col-12 col-md">
                 <h3 id="title">Title loading</h3>
             </div>
-            <div class="col-12 col-md-3 mb-2">
-                <div class="row">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-success w-100" id="edit">Edit</button>
-                    </div>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-danger w-100" id="delete">Delete</button>
-                    </div>
+            <div class="col-12 col-md-6 mb-2">
+                <div id="time" class="text-right mt-3">
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="input-group mb-2 col-12">
+            <div class="input-group mb-2 col-md col-12">
                 <h6 id="description">Description loading</h6>
+            </div>
+            <div class="col-12 col-md-6 mb-2">
+                <h6 id="tags" class="text-right"></h6>
             </div>
         </div>
 
@@ -98,9 +95,13 @@
     <!--secondary-navbar-->
     <script src="../template-secondary-navbar/navbar.js"></script>
 
+    <!--time parse-->
+    <script src="/js/rfc3339date.js/rfc3339date.js"></script>
+    <script src="/js/time.js"></script>
+
     <!--editor.md-->
     <script src="/node_modules/editor.md/editormd.min.js"></script>
-    <script src="./get_url_param.js"></script>
+    <script src="/js/get_url_param.js"></script>
     <script src="./load_editor.js"></script>
     <script src="./editor_action.js"></script>
 

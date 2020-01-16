@@ -2,9 +2,14 @@
     editor action
 ********************************/
 
-originTitle = getUrlParam("title") != null ? getUrlParam("title") : "";
+ID = getUrlParam("id") != null ? getUrlParam("id") : null;
 
-$("#save").click(function () {
+$(document).ready(function () {
+    addButton("success", "saveButton", "save");
+    addButton("danger", "deleteButton", "delete");
+});
+
+function saveButton() {
     var title = $("#title").val();
     if (title == "") {
         var json = JSON.parse('{"Result":"Fail", "Str":"Title cannot be empty"}');
@@ -12,19 +17,23 @@ $("#save").click(function () {
         return;
     }
 
-    var description = $("#description").val();
+    Article.Title = title;
+    Article.Description = $("#description").val();
+    Article.Markdown = editor.getMarkdown();
 
-    var md = editor.getMarkdown();
+    createTime = Article.CreateTime != "" ? "\"" + Article.CreateTime + "\"" : "";
 
     // post
     $.post("/go/save-article",
         {
             username: getUsernameCookie(),
             password: getPasswordCookie(),
-            title: title,
-            description: description,
-            markdown: md,
-            originTitle: originTitle
+            id: Article.ID,
+            title: Article.Title,
+            description: Article.Description,
+            markdown: Article.Markdown,
+            tags: Article.Tags,
+            createTime: createTime
         },
         function (data, status) {
             // request not success
@@ -37,25 +46,26 @@ $("#save").click(function () {
             var json = JSON.parse(data);
 
             if (json.Result == "Success") {
-                originTitle = title;
+                Article.ID = json.ID;
             }
 
             // set result
             setResult(json);
             return;
         });
+}
 
-    // cancel first save flag
-    firstSaveFlag = false;
-});
+function deleteButton() {
+    if (Article.ID == "") {
+        return;
+    }
 
-$("#delete").click(function () {
     // post
     $.post("/go/delete-article",
         {
             username: getUsernameCookie(),
             password: getPasswordCookie(),
-            title: originTitle
+            id: Article.ID
         },
         function (data, status) {
             // request not success
@@ -77,10 +87,16 @@ $("#delete").click(function () {
             }
             return;
         });
+}
 
-    // cancel first save flag
-    firstSaveFlag = false;
-});
+function tagButton(tag) {
+    var pos = Article.Tags.indexOf(tag);
+    if (pos == -1) {
+        Article.Tags.push(tag);
+    } else {
+        Article.Tags.splice(pos, 1);
+    }
+}
 
 /*******************************************************************
     func:   setResult

@@ -2,19 +2,33 @@
     editor action
 ********************************/
 
-originTitle = ""
-
-$("#edit").click(function () {
-    $(location).prop('href', '../editor?title=' + getUrlParam("title"));
+$(document).ready(function () {
+    addButton("success", "editButton", "edit");
+    addButton("danger", "deleteButton", "delete");
 });
 
-$("#delete").click(function () {
+function editButton() {
+    $(location).prop('href', '../editor?id=' + getUrlParam("id"));
+}
+
+function deleteButton() {
+    // check sign
+    if (getUsernameCookie() == null || getPasswordCookie() == null) {
+        // set modal
+        $("#modal-title").text("Fail");
+        $("#modal-body").text("Please sign in");
+
+        // show modal
+        $("#result").modal('show');
+        return;
+    }
+
     // post
     $.post("/go/delete-article",
         {
             username: getUsernameCookie(),
             password: getPasswordCookie(),
-            title: getUrlParam("title")
+            id: getUrlParam("id")
         },
         function (data, status) {
             // request not success
@@ -36,10 +50,7 @@ $("#delete").click(function () {
             }
             return;
         });
-
-    // cancel first save flag
-    firstSaveFlag = false;
-});
+}
 
 /*******************************************************************
     func:   setResult

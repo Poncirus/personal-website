@@ -6,12 +6,12 @@ var editor;
 
 $(document).ready(function () {
     // load title and description
-    var title = getUrlParam("title");
+    var id = getUrlParam("id");
     var md = "";
 
     $.post("/go/get-article",
         {
-            title: title
+            id: id
         },
         function (data, status) {
             // request not success
@@ -25,9 +25,19 @@ $(document).ready(function () {
                 return;
             }
 
-            $("#title").html(json.Title);
-            $("#description").html(json.Description);
-            md = json.Markdown;
+            var article = json.Article
+
+            $("#title").html(article.Title);
+            $("#description").html(article.Description);
+            $("#time").html("Created: " + parseTime(article.CreateTime) + " &nbsp; Modified: " + parseTime(article.LastModification));
+
+            var tag = "";
+            for (i in article.Tags) {
+                tag += " &nbsp; " + article.Tags[i];
+            }
+            $("#tags").html(tag);
+
+            md = article.Markdown;
 
             // calculate height
             if (document.body.clientWidth > 1000) {

@@ -42,29 +42,38 @@
 
     <main class="container mt-4" role="main">
         <div class="row justify-content-between">
-            <div class="input-group mb-3 col-12 col-md">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Title</span>
+            <div class="col-12 col-md-4">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Title</span>
+                    </div>
+                    <input type="text" class="form-control" id="title">
                 </div>
-                <input type="text" class="form-control" id="title">
             </div>
-            <div class="col-12 col-md-3 mb-3">
-                <div class="row">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-success w-100" id="save">Save</button>
+            <div class="col-12 col-md-8">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Description</span>
                     </div>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-danger w-100" id="delete">Delete</button>
-                    </div>
+                    <input type="text" class="form-control" id="description">
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="input-group mb-3 col-12">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Description</span>
+        <div class="card mb-3">
+            <div class="card-body p-2">
+                <div class="row">
+                    <div class="col-12 col-md-10">
+                        <div class='btn-group-toggle' data-toggle='buttons' id="tags"></div>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" id="new-tag">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" onclick="addTag()">Add</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <input type="text" class="form-control" id="description">
             </div>
         </div>
 
@@ -106,12 +115,15 @@
 
     <!--editor.md-->
     <script src="/node_modules/editor.md/editormd.min.js"></script>
-    <script src="./get_url_param.js"></script>
+    <script src="/js/get_url_param.js"></script>
     <script src="./load_editor.js"></script>
     <script src="./editor_action.js"></script>
 
     <!--user-->
     <script src="/js/user.js"></script>
+    
+    <!--tags-->
+    <script src="./tags.js"></script>
 </body>
 
 </html>

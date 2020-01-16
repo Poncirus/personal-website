@@ -1,0 +1,12 @@
+{
+    "_id": "hex string",
+    "Title": "Title",
+    "Description": "Description",
+    "CreateTime": "YYYY-MM-DD HH:MM:SS",
+    "LastModification": "YYYY-MM-DD HH:MM:SS",
+    "Tags": [
+        "Tag1",
+        "Tag2"
+    ],
+    "Markdown": "Markdown article"
+}
