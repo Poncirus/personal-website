@@ -32,21 +32,14 @@ $(document).ready(function () {
 });
 
 function getTagHtml(tag) {
-    return "<label class='btn btn-sm btn-outline-secondary mr-2 mb-2' tag='" + tag + "' onchange=\"tagSearch('" + tag + "')\"> \
+    return "<label class='btn btn-sm btn-outline-secondary mr-2 mb-2' tag='" + tag + "' onchange=\"tagModify('" + tag + "')\"> \
                 <input type='checkbox'>" + tag + " \
             </label>";
 }
 
 var TagSelected = [];
 
-function tagSearch(tag) {
-    var pos = TagSelected.indexOf(tag);
-    if (pos == -1) {
-        TagSelected.push(tag);
-    } else {
-        TagSelected.splice(pos, 1);
-    }
-
+function tagSearch() {
     $.post("/go/tag-search",
         {
             tags: TagSelected
@@ -65,4 +58,20 @@ function tagSearch(tag) {
 
             renderArticle(json.Articles);
         });
+}
+
+function tagModify(tag) {
+    var pos = TagSelected.indexOf(tag);
+    if (pos == -1) {
+        TagSelected.push(tag);
+    } else {
+        TagSelected.splice(pos, 1);
+    }
+    tagSearch();
+}
+
+function tagClear() {
+    TagSelected = [];
+    $("#tags label").removeClass("active");
+    tagSearch();
 }
