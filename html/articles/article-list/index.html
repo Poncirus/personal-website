@@ -39,6 +39,9 @@
     <main class="container mt-4" role="main">
         <div class="row">
             <div class="col-12 col-md-8">
+                <div id="alert">
+                    <!--search alert-->
+                </div>
                 <div id="articles" class="py-2 px-2 bg-white rounded shadow border mb-3">
                     <h3>article list loading</h3>
                 </div>
@@ -50,15 +53,17 @@
                     </div>
                     <div class="card-body">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Title">
-                            <button type="button" class="btn btn-outline-secondary ml-3">Search</button>
+                            <input type="text" class="form-control" placeholder="Title" id="search-title">
+                            <button type="button" class="btn btn-outline-secondary ml-3"
+                                onclick="search()">Search</button>
                         </div>
                     </div>
                 </div>
                 <div class="card shadow mb-3">
                     <div class="card-header">
                         Tags
-                        <button type="button" class="btn btn-sm btn-outline-secondary float-right my-n1" onclick="tagClear()">Clear</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary float-right my-n1"
+                            onclick="tagClear()">Clear</button>
                     </div>
                     <div class="card-body p-3" id="tags">
                         tags loading
@@ -89,6 +94,9 @@
 
     <!--tags-->
     <script src="./tags.js"></script>
+
+    <!--search-->
+    <script src="./search.js"></script>
 </body>
 
 </html>
