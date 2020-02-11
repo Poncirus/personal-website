@@ -140,7 +140,7 @@ func FindArticleWithTitle(title string) ([]Article, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	cursor, err := collection.Find(ctx, bson.M{"title": primitive.Regex{".*"+title+".*", "i"}})
+	cursor, err := collection.Find(ctx, bson.M{"title": primitive.Regex{Pattern: ".*" + title + ".*", Options: "i"}})
 
 	if err != nil {
 		return nil, err
