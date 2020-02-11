@@ -129,6 +129,32 @@ func FindArticleWithTag(tags []string) ([]Article, error) {
 	return results, nil
 }
 
+// FindArticleWithTitle find articles with title
+func FindArticleWithTitle(title string) ([]Article, error) {
+	if title == "" {
+		// Search all articles
+		return FindAllArticle()
+	}
+
+	collection := c.Database("personal-website").Collection("article")
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	cursor, err := collection.Find(ctx, bson.M{"title": primitive.Regex{".*"+title+".*", "i"}})
+
+	if err != nil {
+		return nil, err
+	}
+
+	var results []Article
+	if err = cursor.All(context.TODO(), &results); err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+
+	return results, nil
+}
+
 // DeleteArticle delete article with id
 func DeleteArticle(hexID string) error {
 	collection := c.Database("personal-website").Collection("article")
