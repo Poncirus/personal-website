@@ -4,12 +4,34 @@ function search() {
         return;
     }
 
-    $("#alert").html(getAlertHtml(title));
+    tagClear();
+    $.post("/go/title-search",
+        {
+            title: title
+        },
+        function (data, status) {
+            // request not success
+            if (status != "success") {
+                return;
+            }
+            // parse data to json object
+            var json = JSON.parse(data);
 
-    // close alert
-    $('#alert .alert').on('closed.bs.alert', function () {
-        alert("In progress");
-    })
+            if (json.Result != "Success") {
+                return;
+            }
+
+            renderArticle(json.Articles);
+
+            // set alert
+            $("#alert").html(getAlertHtml(title));
+
+            // close alert
+            $('#alert .alert').on('closed.bs.alert', function () {
+                tagClear();
+                tagSearch();
+            });
+        });
 }
 
 function getAlertHtml(title) {

@@ -73,5 +73,9 @@ function tagModify(tag) {
 function tagClear() {
     TagSelected = [];
     $("#tags label").removeClass("active");
-    tagSearch();
 }
+
+$("#tag-clear").click(function(){
+    tagClear();
+    tagSearch();
+});
