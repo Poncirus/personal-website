@@ -14,13 +14,17 @@ import (
 
 // imageUpload handle image upload request
 func imageUpload(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodOptions {
+		return
+	}
+
 	Log.LogWarn("image-upload, new request")
 
 	// response send to editor.md
 	type Response struct {
-		Success int		`json:"success"`
-		Message string	`json:"message"`
-		URL     string	`json:"url"`
+		Success int    `json:"success"`
+		Message string `json:"message"`
+		URL     string `json:"url"`
 	}
 
 	// get dir
@@ -34,6 +38,10 @@ func imageUpload(w http.ResponseWriter, r *http.Request) {
 
 	// get request
 	file, header, err := r.FormFile("editormd-image-file")
+	if err != nil {
+		file, header, err = r.FormFile("image")
+	}
+
 	if err != nil {
 		Log.LogWarn(err)
 		response.Success = 0
