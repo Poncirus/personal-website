@@ -6,3 +6,5 @@
 /website/node_modules*
 
 /go/bin/server.log
+
+/static/image

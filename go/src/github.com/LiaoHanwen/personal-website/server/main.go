@@ -35,7 +35,7 @@ func main() {
 	Log = mylog.New(gjson.Get(Config, "log.class").String())
 
 	// init database
-	database.Init()
+	database.Init(gjson.Get(Config, "mongodb.server").String())
 
 	// set route
 	http.HandleFunc("/", defaultRoute)
