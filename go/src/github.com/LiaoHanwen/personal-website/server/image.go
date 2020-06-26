@@ -20,11 +20,18 @@ func imageUpload(w http.ResponseWriter, r *http.Request) {
 
 	Log.LogWarn("image-upload, new request")
 
-	// response send to editor.md
+	// successful response
+	type Data struct {
+		FilePath string `json:"filePath"`
+	}
+
 	type Response struct {
-		Success int    `json:"success"`
-		Message string `json:"message"`
-		URL     string `json:"url"`
+		Data Data `json:"data"`
+	}
+
+	// error response
+	type ErrorResponse struct {
+		Error int `json:"error"`
 	}
 
 	// get dir
@@ -35,18 +42,15 @@ func imageUpload(w http.ResponseWriter, r *http.Request) {
 	dir = dir + gjson.Get(Config, "markdown.imageRoot").String()
 
 	var response Response
+	var errorResponse ErrorResponse
 
 	// get request
-	file, header, err := r.FormFile("editormd-image-file")
-	if err != nil {
-		file, header, err = r.FormFile("image")
-	}
+	file, header, err := r.FormFile("image")
 
 	if err != nil {
 		Log.LogWarn(err)
-		response.Success = 0
-		response.Message = err.Error()
-		reply(w, response)
+		errorResponse.Error = 413
+		reply(w, errorResponse)
 		Log.LogWarn("image-upload, fail excution")
 		return
 	}
@@ -65,8 +69,7 @@ func imageUpload(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 	}
 
-	response.Success = 1
-	response.URL = gjson.Get(Config, "markdown.imageURLRoot").String() + name
+	response.Data.FilePath = gjson.Get(Config, "markdown.imageURLRoot").String() + name
 
 	reply(w, response)
 	Log.LogInfo("image-upload, finish")
