@@ -52,7 +52,7 @@ class Main extends React.Component {
         }
 
         this.secondaryNavbarItem = {
-            currentPage: "",
+            currentPage: getUrlParameter('id') != null ? '' : 'New Article',
             items: [{
                 item: "New Article",
                 func: () => $(location).prop('href', '/articles/editor')
@@ -289,4 +289,4 @@ class Main extends React.Component {
 
 
 // main
-ReactDOM.render(<Main></Main>, document.getlsElementById('main'))
+ReactDOM.render(<Main></Main>, document.getElementById('main'))
