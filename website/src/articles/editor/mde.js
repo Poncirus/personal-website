@@ -16,6 +16,7 @@ export default class MDE extends React.Component {
         this.options = {
             onToggleFullScreen: this.onToggleFullScreen,
             sideBySideFullscreen: false,
+            showIcons: ['strikethrough', 'code', 'table', 'redo', 'heading', 'undo', 'heading-bigger', 'heading-smaller', 'heading-1', 'heading-2', 'heading-3', 'clean-block', 'horizontal-rule'],
             uploadImage: true,
             imageUploadFunction: this.imageUpload,
             imageUploadEndpoint: config.server + '/go/image-upload'
