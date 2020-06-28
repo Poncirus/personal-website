@@ -294,7 +294,7 @@ eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/run
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/main/heart.png\");\n\n//# sourceURL=webpack:///./src/main/heart.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/main/heart.png\");\n\n//# sourceURL=webpack:///./src/main/heart.png?");
 
 /***/ }),
 

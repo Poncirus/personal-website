@@ -1520,7 +1520,7 @@ eval("\n\nvar visit = __webpack_require__(/*! unist-util-visit */ \"./node_modul
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"node_modules/unist-util-stringify-position/index.js\");\n\n//# sourceURL=webpack:///./node_modules/unist-util-stringify-position/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../node_modules/unist-util-stringify-position/index.js\");\n\n//# sourceURL=webpack:///./node_modules/unist-util-stringify-position/index.js?");
 
 /***/ }),
 

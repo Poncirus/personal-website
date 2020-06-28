@@ -896,7 +896,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/logo/GitHub_Logo.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/GitHub_Logo.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/logo/GitHub_Logo.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/GitHub_Logo.png?");
 
 /***/ }),
 
@@ -908,7 +908,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/logo/GitHub_Mark.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/GitHub_Mark.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/logo/GitHub_Mark.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/GitHub_Mark.png?");
 
 /***/ }),
 
@@ -920,7 +920,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/logo/Weibo_Logo.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/Weibo_Logo.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/logo/Weibo_Logo.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/Weibo_Logo.png?");
 
 /***/ }),
 
@@ -932,7 +932,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/logo/Zhihu_Logo.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/Zhihu_Logo.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/logo/Zhihu_Logo.png\");\n\n//# sourceURL=webpack:///./src/about-me/logo/Zhihu_Logo.png?");
 
 /***/ }),
 
@@ -944,7 +944,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/resume/resume-cn.jpg\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume-cn.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/resume/resume-cn.jpg\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume-cn.jpg?");
 
 /***/ }),
 
@@ -956,7 +956,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/resume/resume-cn.pdf\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume-cn.pdf?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/resume/resume-cn.pdf\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume-cn.pdf?");
 
 /***/ }),
 
@@ -968,7 +968,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/resume/resume.jpg\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/resume/resume.jpg\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume.jpg?");
 
 /***/ }),
 
@@ -980,7 +980,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/about-me/resume/resume.pdf\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume.pdf?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../src/about-me/resume/resume.pdf\");\n\n//# sourceURL=webpack:///./src/about-me/resume/resume.pdf?");
 
 /***/ }),
 

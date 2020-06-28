@@ -97,6 +97,7 @@ module.exports = {
                 loader: 'file-loader',
                 exclude: /src\/favicon/,
                 options: {
+                    publicPath: '../',
                     name: '[path][name].[ext]'
                 }
             }
