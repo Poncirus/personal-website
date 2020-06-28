@@ -22,6 +22,10 @@ export default class Navbar extends React.Component {
             {
                 item: "Articles",
                 href: "/articles/article_list"
+            },
+            {
+                item: "About me",
+                href: "/about-me"
             }]
         }
     }

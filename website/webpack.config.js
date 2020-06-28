@@ -42,6 +42,11 @@ const htmlPlugin = [
         filename: 'tools/index.html',
         template: path.join(__dirname, './src/tools/index.html'),
         chunks: ["tools"]
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'about-me/index.html',
+        template: path.join(__dirname, './src/about-me/index.html'),
+        chunks: ["aboutme"]
     })
 ]
 
@@ -56,7 +61,8 @@ module.exports = {
         article: './src/articles/article/article.js',
         editor: './src/articles/editor/editor.js',
         signin: './src/sign-in/sign-in.js',
-        tools: './src/tools/tools.js'
+        tools: './src/tools/tools.js',
+        aboutme: './src/about-me/about-me.js'
     },
     output: {
         filename: 'js/[name].js',
@@ -87,7 +93,7 @@ module.exports = {
                 use: 'url-loader'
             },
             {
-                test: /\.png|jpg|gif|svg$/,
+                test: /\.png|jpg|gif|svg|pdf$/,
                 loader: 'file-loader',
                 exclude: /src\/favicon/,
                 options: {

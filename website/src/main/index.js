@@ -26,6 +26,10 @@ function Navbar() {
     {
         str: "Articles",
         src: "/articles/article_list"
+    },
+    {
+        str: "About me",
+        src: "/about-me"
     }]
 
     return items.map(v => <a className="nav-link" href={v.src} key={v.str} > {v.str} </a>)
