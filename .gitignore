@@ -3,6 +3,8 @@
 /html/node_modules
 /html/bootstrap-4.3.1-dist
 
+/website/node_modules*
+
 /go/bin/server.log
 
 /static/image
