@@ -20,7 +20,7 @@ const panels = [{
 }, {
     header: "Articles",
     intro: "My notes",
-    items: [{ item: "Article List", href: "/articles/article_list" }]
+    items: [{ item: "Article List", href: "/articles/article-list" }]
 }]
 
 ReactDOM.render(panels.map(v => <Panel key={v.header} {...v}></Panel>), document.getElementById('panels'))

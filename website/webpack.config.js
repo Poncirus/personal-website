@@ -19,8 +19,8 @@ const htmlPlugin = [
         chunks: ["home"]
     }),
     new HtmlWebpackPlugin({
-        filename: 'articles/article_list/index.html',
-        template: path.join(__dirname, './src/articles/article_list/index.html'),
+        filename: 'articles/article-list/index.html',
+        template: path.join(__dirname, './src/articles/article-list/index.html'),
         chunks: ["article_list"]
     }),
     new HtmlWebpackPlugin({
@@ -36,7 +36,7 @@ const htmlPlugin = [
     new HtmlWebpackPlugin({
         filename: 'sign-in/index.html',
         template: path.join(__dirname, './src/sign-in/index.html'),
-        chunks: ["signin"]
+        chunks: ["sign_in"]
     }),
     new HtmlWebpackPlugin({
         filename: 'tools/index.html',
@@ -46,7 +46,7 @@ const htmlPlugin = [
     new HtmlWebpackPlugin({
         filename: 'about-me/index.html',
         template: path.join(__dirname, './src/about-me/index.html'),
-        chunks: ["aboutme"]
+        chunks: ["about_me"]
     })
 ]
 
@@ -57,12 +57,12 @@ module.exports = {
         test: './src/test/test.js',
         main: './src/main/index.js',
         home: './src/home/home.js',
-        article_list: './src/articles/article_list/article_list.js',
+        article_list: './src/articles/article-list/article-list.js',
         article: './src/articles/article/article.js',
         editor: './src/articles/editor/editor.js',
-        signin: './src/sign-in/sign-in.js',
+        sign_in: './src/sign-in/sign-in.js',
         tools: './src/tools/tools.js',
-        aboutme: './src/about-me/about-me.js'
+        about_me: './src/about-me/about-me.js'
     },
     output: {
         filename: 'js/[name].js',

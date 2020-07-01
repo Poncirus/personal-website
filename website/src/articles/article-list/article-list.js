@@ -10,10 +10,10 @@ import { config } from '@/config/config.js'
 import Navbar from '@/navbar/navbar.js'
 import SecondaryNavbar from '@/secondary_navbar/secondary_navbar.js'
 
-import Search from '@/articles/article_list/search.js'
-import Tags from '@/articles/article_list/tags.js'
-import List from '@/articles/article_list/list.js'
-import Alert from '@/articles/article_list/alert.js'
+import Search from '@/articles/article-list/search.js'
+import Tags from '@/articles/article-list/tags.js'
+import List from '@/articles/article-list/list.js'
+import Alert from '@/articles/article-list/alert.js'
 
 // set title
 document.title = '橘生淮北 - Article List'
@@ -30,7 +30,7 @@ const secondaryNavbarItem = {
         func: () => $(location).prop('href', '/articles/editor')
     }, {
         item: "Article List",
-        func: () => $(location).prop('href', '/articles/article_list')
+        func: () => $(location).prop('href', '/articles/article-list')
     }],
     buttons: []
 }

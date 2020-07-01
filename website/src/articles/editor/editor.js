@@ -58,7 +58,7 @@ class Main extends React.Component {
                 func: () => $(location).prop('href', '/articles/editor')
             }, {
                 item: "Article List",
-                func: () => $(location).prop('href', '/articles/article_list')
+                func: () => $(location).prop('href', '/articles/article-list')
             }],
             buttons: [{
                 item: 'Save',
@@ -203,7 +203,7 @@ class Main extends React.Component {
                             title: json.Result,
                             content: 'Delete article successful',
                             show: true,
-                            callback: () => $(location).prop('href', '/articles/article_list')
+                            callback: () => $(location).prop('href', '/articles/article-list')
                         }
                     })
                 } else {

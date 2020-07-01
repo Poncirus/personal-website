@@ -25,7 +25,7 @@ function Navbar() {
     },
     {
         str: "Articles",
-        src: "/articles/article_list"
+        src: "/articles/article-list"
     },
     {
         str: "About me",

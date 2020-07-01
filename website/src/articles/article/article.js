@@ -29,7 +29,7 @@ const secondaryNavbarItem = {
         func: () => $(location).prop('href', '/articles/editor')
     }, {
         item: "Article List",
-        func: () => $(location).prop('href', '/articles/article_list')
+        func: () => $(location).prop('href', '/articles/article-list')
     }],
     buttons: [{
         item: 'Edit',
