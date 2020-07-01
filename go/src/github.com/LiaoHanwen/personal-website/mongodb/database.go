@@ -18,7 +18,7 @@ func Init(server string) error {
 	defer cancle()
 
 	var err error
-	c, err = mongo.Connect(ctx, options.Client().ApplyURI())
+	c, err = mongo.Connect(ctx, options.Client().ApplyURI(server))
 
 	if err != nil {
 		fmt.Println("database connect fail")
