@@ -1,0 +1,1 @@
+nohup ./personal-website >> personal-website.log 2>&1 &

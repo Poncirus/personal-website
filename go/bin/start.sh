@@ -1,1 +1,0 @@
-nohup ./server >> server.log 2>&1 &

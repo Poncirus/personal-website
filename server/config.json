@@ -1,0 +1,16 @@
+{
+    "log": {
+        "class": "info"
+    },
+    "web": {
+        "port": 8081
+    },
+    "mongodb": {
+        "server": "mongodb://localhost:27017"
+    },
+    "markdown": {
+        "fileRoot": "/../../static/markdown/",
+        "imageRoot": "/../../static/image/",
+        "imageURLRoot": "/static/image/"
+    }
+}
