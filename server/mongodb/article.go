@@ -126,6 +126,10 @@ func FindArticleWithTag(tags []string) ([]Article, error) {
 		return nil, err
 	}
 
+	if results == nil {
+		results = []Article{}
+	}
+
 	return results, nil
 }
 
