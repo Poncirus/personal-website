@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Navbar from '@/navbar/navbar.js'
+import TopNavbar from '@/navbar/navbar.js'
 import SecondaryNavbar from '../secondary_navbar/secondary_navbar'
 
 import List from '@/tools/list.js'
@@ -58,7 +58,7 @@ class Main extends React.Component {
         });
 
         return <div>
-            <Navbar currentPage="Tools"></Navbar>
+            <TopNavbar currentPage="Tools"></TopNavbar>
             <SecondaryNavbar currentPage={this.state.current} items={items} buttons={[]}></SecondaryNavbar>
             {page}
         </div>

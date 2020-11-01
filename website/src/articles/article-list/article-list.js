@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { config } from '@/config/config.js'
 
-import Navbar from '@/navbar/navbar.js'
+import TopNavbar from '@/navbar/navbar.js'
 import SecondaryNavbar from '@/secondary_navbar/secondary_navbar.js'
 
 import Search from '@/articles/article-list/search.js'
@@ -19,7 +19,7 @@ import Alert from '@/articles/article-list/alert.js'
 document.title = '橘生淮北 - Article List'
 
 // navbar
-const navbar = <Navbar currentPage="Articles"></Navbar>
+const navbar = <TopNavbar currentPage="Articles"></TopNavbar>
 ReactDOM.render(navbar, document.getElementById('navbar'))
 
 // secondary navbar

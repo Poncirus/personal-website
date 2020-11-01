@@ -9,7 +9,7 @@ import { config } from '@/config/config.js'
 import { parseTime } from '@/js/time.js'
 import { getUrlParameter } from '@/js/url.js'
 
-import Navbar from '@/navbar/navbar.js'
+import TopNavbar from '@/navbar/navbar.js'
 import SecondaryNavbar from '@/secondary_navbar/secondary_navbar.js'
 
 import Viewer from '@/components/viewer/viewer.js'
@@ -18,7 +18,7 @@ import Viewer from '@/components/viewer/viewer.js'
 document.title = '橘生淮北 - Article'
 
 // navbar
-const navbar = <Navbar currentPage="Articles"></Navbar>
+const navbar = <TopNavbar currentPage="Articles"></TopNavbar>
 ReactDOM.render(navbar, document.getElementById('navbar'))
 
 // secondary navbar

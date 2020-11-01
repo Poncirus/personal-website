@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Nav from 'react-bootstrap/Nav'
+
 export default class NavbarItem extends React.Component {
     constructor(props) {
         super(props)
     }
 
     render() {
-        return <li className="nav-item">
-            <a className={`nav-link ${this.props.bold ? "active" : null}`} href={this.props.href} > {this.props.item} </a>
-        </li>
+        return <Nav.Item>
+            <Nav.Link active={this.props.bold} href={this.props.href} > {this.props.item} </Nav.Link>
+        </Nav.Item>
     }
 }

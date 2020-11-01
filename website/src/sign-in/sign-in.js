@@ -11,7 +11,7 @@ import '@/sign-in/sign.css'
 
 import { config } from '@/config/config.js'
 
-import Navbar from '@/navbar/navbar.js'
+import TopNavbar from '@/navbar/navbar.js'
 import Pop from '@/components/pop/pop.js'
 
 // set title
@@ -42,7 +42,7 @@ class Main extends React.Component {
 
     render() {
         return <div className='container'>
-            <Navbar currentPage="Sign in"></Navbar>
+            <TopNavbar currentPage="Sign in"></TopNavbar>
             <main className="container mt-4 text-center" role="main">
                 <div className="form-signin">
                     <img width="128" height="128" className="mb-5" alt="" src="/android-chrome-256x256.png" />

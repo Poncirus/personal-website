@@ -7,7 +7,10 @@ import NavbarItem from '@/navbar/navbar_item.js'
 
 import { getUsernameCookie } from '@/js/user.js'
 
-export default class Navbar extends React.Component {
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav'
+
+export default class TopNavbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -33,24 +36,20 @@ export default class Navbar extends React.Component {
 
     render() {
         let style = this.props.zIndex == null ? { zIndex: 1030 } : { zIndex: this.props.zIndex }
-        return <nav className="navbar navbar-expand-md fixed-top navbar-dark bg-dark" style={style}>
-            <a className="navbar-brand" href="/">Liao Hanwen</a>
-            <button className="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                <span className="navbar-toggler-icon"></span>
-            </button>
+        return <Navbar expand="md" fixed="top" bg="dark" variant="dark" style={style}>
+            <Navbar.Brand href="/">Liao Hanwen</Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbar-nav" />
 
-            <div className="navbar-collapse offcanvas-collapse">
-                <ul className="navbar-nav mr-auto">
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
                     {this.state.items.map(v => <NavbarItem key={v.item} bold={this.props.currentPage == v.item} {...v}></NavbarItem>)}
-                </ul>
-                <div>
-                    <ul className="navbar-nav mr-auto">
-                        {getUsernameCookie() == null ?
-                            <NavbarItem item='Sign in' href='/sign-in' bold={this.props.currentPage == "Sign in"} ></NavbarItem> :
-                            <NavbarItem item={getUsernameCookie()}></NavbarItem>}
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                </Nav>
+                <Nav>
+                    {getUsernameCookie() == null ?
+                        <NavbarItem item='Sign in' href='/sign-in' bold={this.props.currentPage == "Sign in"} ></NavbarItem> :
+                        <NavbarItem item={getUsernameCookie()}></NavbarItem>}
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     }
 }

@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Navbar from '@/navbar/navbar.js'
+import TopNavbar from '@/navbar/navbar.js'
 
 import ResumeJPG from '@/about-me/resume/resume.jpg'
 import ResumeCNJPG from '@/about-me/resume/resume-cn.jpg'
@@ -28,7 +28,7 @@ class Main extends React.Component {
 
     render() {
         return <div className='container'>
-            <Navbar currentPage="About me"></Navbar>
+            <TopNavbar currentPage="About me"></TopNavbar>
             <main className="container mt-4" role="main">
                 <Resume></Resume>
                 <SocialMedia></SocialMedia>

@@ -14,7 +14,7 @@ const heart = <img className="my-4" src={heartImg} alt="heart png" height="200" 
 ReactDOM.render(heart, document.getElementById('heart'))
 
 // navbar
-function Navbar() {
+function TopNavbar() {
     const items = [{
         str: "Home",
         src: "/home"
@@ -35,4 +35,4 @@ function Navbar() {
     return items.map(v => <a className="nav-link" href={v.src} key={v.str} > {v.str} </a>)
 }
 
-ReactDOM.render(<Navbar></Navbar>, document.getElementById('navbar'))
+ReactDOM.render(<TopNavbar></TopNavbar>, document.getElementById('navbar'))

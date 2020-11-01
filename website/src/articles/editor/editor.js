@@ -9,7 +9,7 @@ import { config } from '@/config/config.js'
 import { getUrlParameter } from '@/js/url.js'
 import { getUsernameCookie, getPasswordCookie } from '@/js/user.js'
 
-import Navbar from '@/navbar/navbar.js'
+import TopNavbar from '@/navbar/navbar.js'
 import SecondaryNavbar from '@/secondary_navbar/secondary_navbar.js'
 import Pop from '@/components/pop/pop.js'
 
@@ -99,7 +99,7 @@ class Main extends React.Component {
         }
 
         return <div>
-            <Navbar zIndex={this.state.navbarZIndex} currentPage="Articles"></Navbar>
+            <TopNavbar zIndex={this.state.navbarZIndex} currentPage="Articles"></TopNavbar>
             <SecondaryNavbar {...this.secondaryNavbarItem}></SecondaryNavbar>
             <main className="container mt-4" role="main">
                 <Title title={this.state.title} description={this.state.description} changeTitle={this.changeTitle} changeDescription={this.changeDescription}></Title>
