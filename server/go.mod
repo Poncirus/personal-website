@@ -1,4 +1,4 @@
-module github.com/LiaoHanwen/personal-website
+module github.com/LiaoHanwen/personal-website/server
 
 go 1.15
 

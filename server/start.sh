@@ -1,1 +1,1 @@
-nohup ./personal-website >> personal-website.log 2>&1 &
+nohup ./server >> server.log 2>&1 &

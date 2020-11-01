@@ -9,8 +9,8 @@
         "server": "mongodb://localhost:27017"
     },
     "markdown": {
-        "fileRoot": "/../../static/markdown/",
-        "imageRoot": "/../../static/image/",
+        "fileRoot": "/home/web/personal-website/static/markdown/",
+        "imageRoot": "/home/web/personal-website/static/image/",
         "imageURLRoot": "/static/image/"
     }
 }

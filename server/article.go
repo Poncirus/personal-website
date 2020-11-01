@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	database "github.com/LiaoHanwen/personal-website/mongodb"
+	database "github.com/LiaoHanwen/personal-website/server/mongodb"
 )
 
 func getArticleList(w http.ResponseWriter, r *http.Request) {

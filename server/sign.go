@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	database "github.com/LiaoHanwen/personal-website/mongodb"
+	database "github.com/LiaoHanwen/personal-website/server/mongodb"
 )
 
 func signIn(w http.ResponseWriter, r *http.Request) {

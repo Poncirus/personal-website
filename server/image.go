@@ -5,7 +5,6 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"path/filepath"
 	"strconv"
 	"time"
 
@@ -35,11 +34,7 @@ func imageUpload(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// get dir
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
-	if err != nil {
-		fmt.Println(err)
-	}
-	dir = dir + gjson.Get(Config, "markdown.imageRoot").String()
+	dir := gjson.Get(Config, "markdown.imageRoot").String()
 
 	var response Response
 	var errorResponse ErrorResponse
@@ -60,6 +55,7 @@ func imageUpload(w http.ResponseWriter, r *http.Request) {
 	// file name += timestamp
 	name := header.Filename + "-" + strconv.FormatInt(time.Now().Unix(), 10)
 	filePath := dir + name
+	Log.LogInfo("Create file: ", filePath)
 	out, err := os.Create(filePath)
 	defer out.Close()
 

@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	database "github.com/LiaoHanwen/personal-website/mongodb"
+	database "github.com/LiaoHanwen/personal-website/server/mongodb"
 
-	"github.com/LiaoHanwen/personal-website/mylog"
+	"github.com/LiaoHanwen/personal-website/server/mylog"
 
 	"github.com/tidwall/gjson"
 )
