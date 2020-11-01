@@ -7,7 +7,7 @@ import (
 )
 
 func TestSaveArticle(t *testing.T) {
-	Init()
+	Init("mongodb://localhost:27017")
 
 	now := time.Now()
 
@@ -47,7 +47,7 @@ func TestSaveArticle(t *testing.T) {
 }
 
 func TestFindAllArticle(t *testing.T) {
-	Init()
+	Init("mongodb://localhost:27017")
 	got, err := FindAllArticle()
 	if err != nil {
 		t.Errorf("error = %v", err)
