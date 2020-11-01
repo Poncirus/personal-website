@@ -1,6 +1,0 @@
-Config file:  /home/web/personal-website/server/config.json
-INFO: 2020/11/01 12:28:00 start server at port 8081
-WARN: 2020/11/01 12:28:05 get-tags, new request
-WARN: 2020/11/01 12:28:05 get-article-list, new request
-INFO: 2020/11/01 12:28:05 get-tags, finish
-INFO: 2020/11/01 12:28:05 get-article-list, finish
