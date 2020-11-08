@@ -29,6 +29,10 @@ export default class TopNavbar extends React.Component {
             {
                 item: "About me",
                 href: "/about-me"
+            },
+            {
+                item: "VSCode online",
+                href: "/code"
             }]
         }
     }

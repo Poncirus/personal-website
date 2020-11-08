@@ -30,6 +30,10 @@ function TopNavbar() {
     {
         str: "About me",
         src: "/about-me"
+    },
+    {
+        str: "VSCode online",
+        src: "/code"
     }]
 
     return items.map(v => <a className="nav-link" href={v.src} key={v.str} > {v.str} </a>)
