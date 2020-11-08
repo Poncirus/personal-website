@@ -33,7 +33,7 @@ class Main extends React.Component {
     render() {
         return <Container>
             <TopNavbar currentPage='About me'></TopNavbar>
-            <Container>
+            <Container className='mt-4'>
                 <Resume></Resume>
                 <SocialMedia></SocialMedia>
             </Container>
