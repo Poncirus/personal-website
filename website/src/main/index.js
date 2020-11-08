@@ -32,8 +32,12 @@ function TopNavbar() {
         src: "/about-me"
     },
     {
-        str: "VSCode online",
-        src: "/code"
+        str: "VSCode",
+        src: "https://code.liaohanwen.com"
+    },
+    {
+        str: "Cloud",
+        src: "https://cloud.liaohanwen.com"
     }]
 
     return items.map(v => <a className="nav-link" href={v.src} key={v.str} > {v.str} </a>)

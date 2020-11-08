@@ -31,8 +31,12 @@ export default class TopNavbar extends React.Component {
                 href: "/about-me"
             },
             {
-                item: "VSCode online",
-                href: "/code"
+                item: "VSCode",
+                href: "https://code.liaohanwen.com"
+            },
+            {
+                item: "Cloud",
+                href: "https://cloud.liaohanwen.com"
             }]
         }
     }
