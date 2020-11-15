@@ -22,6 +22,6 @@ class PanelItem extends React.Component {
     }
 
     render() {
-        return <a className="btn btn-secondary btn-lg mr-3" href={this.props.href} role="button">{this.props.item}</a>
+        return <a className="btn btn-secondary btn-lg mr-3 mb-2" href={this.props.href} role="button">{this.props.item}</a>
     }
 }
