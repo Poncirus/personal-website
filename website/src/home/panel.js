@@ -7,7 +7,7 @@ export default class Panel extends React.Component {
     }
 
     render() {
-        return <div className="jumbotron pt-4 pb-5 shadow border">
+        return <div className="jumbotron py-3 shadow border">
             <h1 className="display-4">{this.props.header}</h1>
             <p className="lead">{this.props.intro}</p>
             <hr className="my-3" />
