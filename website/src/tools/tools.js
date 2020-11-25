@@ -9,6 +9,8 @@ import SecondaryNavbar from '../secondary_navbar/secondary_navbar'
 import List from '@/tools/list.js'
 import Sha256 from '@/tools/sha256.js'
 
+import { getUrlParameter } from '@/js/url.js'
+
 class Main extends React.Component {
     constructor(props) {
         super(props)
@@ -20,9 +22,13 @@ class Main extends React.Component {
             }
         }
 
-        this.state = {
-            current: "list",
+        let tool = getUrlParameter("tool")
+        if (tool == null) {
+            tool = "list"
+        }
 
+        this.state = {
+            current: tool
         }
 
         this.switchPage = this.switchPage.bind(this)
@@ -30,6 +36,7 @@ class Main extends React.Component {
 
     switchPage(page) {
         this.setState({ current: page })
+        history.pushState(null, "", "?tool=" + page)
     }
 
     render() {
@@ -43,7 +50,8 @@ class Main extends React.Component {
                 break;
 
             default:
-                alert('Loading Error')
+                alert('tool does not exist')
+                page = <List list={this.toolList} switch={this.switchPage}></List>
                 break;
         }
 
