@@ -10,7 +10,7 @@ export default class NavbarItem extends React.Component {
 
     render() {
         return <Nav.Item>
-            <Nav.Link active={this.props.bold} href={this.props.href} > {this.props.item} </Nav.Link>
+            <Nav.Link active={this.props.bold} href={this.props.href} > {this.props.label} </Nav.Link>
         </Nav.Item>
     }
 }

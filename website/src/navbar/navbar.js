@@ -20,27 +20,33 @@ export default class TopNavbar extends React.Component {
         super(props)
         this.state = {
             items: [{
-                item: labels["home"][lang],
+                item: "Home",
+                label: labels["home"][lang],
                 href: "/home"
             },
             {
-                item: labels["tools"][lang],
+                item: "Tools",
+                label: labels["tools"][lang],
                 href: "/tools"
             },
             {
-                item: labels["articles"][lang],
+                item: "Articles",
+                label: labels["articles"][lang],
                 href: "/articles/article-list"
             },
             {
-                item: labels["about-me"][lang],
+                item: "About me",
+                label: labels["about-me"][lang],
                 href: "/about-me"
             },
             {
-                item: labels["VSCode"][lang],
+                item: "VSCode",
+                label: labels["VSCode"][lang],
                 href: "https://code.liaohanwen.com"
             },
             {
-                item: labels["cloud"][lang],
+                item: "Cloud",
+                label: labels["cloud"][lang],
                 href: "https://cloud.liaohanwen.com"
             }]
         }
