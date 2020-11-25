@@ -56,7 +56,7 @@ export default class TopNavbar extends React.Component {
 
     render() {
         let style = this.props.zIndex == null ? { zIndex: 1030 } : { zIndex: this.props.zIndex }
-        return <Navbar expand="md" fixed="top" bg="dark" variant="dark" style={style}>
+        return <Navbar className="text-left" expand="md" fixed="top" bg="dark" variant="dark" style={style}>
             <Navbar.Brand href="/">Liao Hanwen</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar-nav" />
 
