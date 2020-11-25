@@ -12,7 +12,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
-const labels = require('@/navbar/lang.json')
+const labels = require('@/navbar/labels.json')
 const lang = getLanguageCookie()
 
 export default class TopNavbar extends React.Component {
