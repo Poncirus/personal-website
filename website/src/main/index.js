@@ -7,10 +7,15 @@ import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
 import Carousel from 'react-bootstrap/Carousel'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "@/main/cover.css";
 
 import heartImg from "@/main/heart.png"
+
+const labels = require('@/main/labels.json')
+const lang = getLanguageCookie()
 
 // set title
 document.title = '橘生淮北'
@@ -22,20 +27,27 @@ class Main extends React.Component {
         return <div className="mb-4">
             <Carousel indicators={false} fade={true} interval={4000} nextIcon={null} prevIcon={null}>
                 <Carousel.Item>
-                    <h1>My Website</h1>
-                    <h4 className="font-weight-light">Articles and Useful Tools</h4>
+                    <h1>{labels["My Website"][lang]}</h1>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>Articles</h1>
-                    <h4 className="font-weight-light">My Notes and thoughts</h4>
+                    <h1>{labels["Tools"][lang]}</h1>
+                    <h4 className="font-weight-light">{labels["Useful tools"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>VSCode Server</h1>
-                    <h4 className="font-weight-light">Online VSCode Editor</h4>
+                    <h1>{labels["Articles"][lang]}</h1>
+                    <h4 className="font-weight-light">{labels["My Notes and thoughts"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>Nextcloud</h1>
-                    <h4 className="font-weight-light">My Cloud Storage</h4>
+                    <h1>{labels["About me"][lang]}</h1>
+                    <h4 className="font-weight-light">{labels["My resume & personal information"][lang]}</h4>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <h1>{labels["VSCode"][lang]}</h1>
+                    <h4 className="font-weight-light">{labels["Online Vitual Studio Code editor"][lang]}</h4>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <h1>{labels["Cloud"][lang]}</h1>
+                    <h4 className="font-weight-light">{labels["My Nextcloud online storage"][lang]}</h4>
                 </Carousel.Item>
             </Carousel>
         </div>
@@ -50,9 +62,8 @@ class Footer extends React.Component {
             <Accordion>
                 <Accordion.Collapse eventKey="love">
                     <div>
-                        <h2 className="cover-heading">To Ling</h2>
-                        <p className="lead font-weight-light">I will Love You and Respect You Till the End of My Life.</p>
-                        <img className="my-4" src={heartImg} alt="heart png" height="150" />
+                        <p className="lead font-weight-light">{labels["I will Love You and Respect You Till the End of My Life"][lang]}</p>
+                        <img className="my-3" src={heartImg} alt="heart png" height="150" />
                         <p className="lead font-weight-light">2019/3/26</p>
                     </div>
                 </Accordion.Collapse>

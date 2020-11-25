@@ -1,0 +1,50 @@
+{
+    "My Website": {
+        "zh": "我的个人网站",
+        "en": "My Website"
+    },
+    "Tools": {
+        "zh": "工具箱",
+        "en": "Tools"
+    },
+    "Useful tools": {
+        "zh": "实用工具合集",
+        "en": "Useful tools"
+    },
+    "Articles": {
+        "zh": "文章",
+        "en": "Articles"
+    },
+    "My Notes and thoughts": {
+        "zh": "我的笔记以及想法",
+        "en": "My Notes and thoughts"
+    },
+    "About me": {
+        "zh": "个人简介",
+        "en": "About me"
+    },
+    "My resume & personal information": {
+        "zh": "关于我的介绍以及简历",
+        "en": "My resume & personal information"
+    },
+    "VSCode": {
+        "zh": "VSCode",
+        "en": "VSCode"
+    },
+    "Online Vitual Studio Code editor": {
+        "zh": "Visual Studio Code 在线编辑器",
+        "en": "Online Vitual Studio Code editor"
+    },
+    "Cloud": {
+        "zh": "云盘",
+        "en": "Cloud"
+    },
+    "My Nextcloud online storage": {
+        "zh": "我的 NextCloud 在线云盘",
+        "en": "My Nextcloud online storage"
+    },
+    "I will Love You and Respect You Till the End of My Life": {
+        "zh": "会永远爱你",
+        "en": "I will Love You and Respect You Till the End of My Life."
+    }
+}
