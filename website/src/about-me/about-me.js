@@ -54,9 +54,9 @@ class Resume extends React.Component {
             <hr className='my-3' />
             <Accordion>
                 <div className='my-2'>
-                    <Accordion.Toggle as={Button} eventKey='cn' className='btn btn-secondary mr-3'>{labels['Resume - CN'][lang]}</Accordion.Toggle>
-                    <Accordion.Toggle as={Button} eventKey='en' className='btn btn-secondary mr-3'>{labels['Resume - EN'][lang]}</Accordion.Toggle>
-                    <Button variant='secondary' className='mr-3' href='https://github.com/Poncirus/Resume' target='_blank'>{labels['View in GitHub'][lang]}</Button>
+                    <Accordion.Toggle as={Button} eventKey='cn' className='btn btn-secondary mr-3 mb-2'>{labels['Resume - CN'][lang]}</Accordion.Toggle>
+                    <Accordion.Toggle as={Button} eventKey='en' className='btn btn-secondary mr-3 mb-2'>{labels['Resume - EN'][lang]}</Accordion.Toggle>
+                    <Button variant='secondary' className='mr-3 mb-2' href='https://github.com/Poncirus/Resume' target='_blank'>{labels['View in GitHub'][lang]}</Button>
                 </div>
                 <Accordion.Collapse eventKey='cn'>
                     <Container>
@@ -65,8 +65,8 @@ class Resume extends React.Component {
                                 <img src={ResumeCNJPG} style={{ width: '100%' }} className='border rounded shadow' />
                             </Col>
                             <Col xs={12} md={2} className='mt-3'>
-                                <Button variant='secondary' className='mt-3' href={ResumeCNPDF} target='_blank' download>{labels['Download PDF'][lang]}</Button>
-                                <Button variant='secondary' className='mt-3' href={ResumeCNJPG} target='_blank' download>{labels['Download JPG'][lang]}</Button>
+                                <Button variant='secondary' className='mt-3' href={ResumeCNPDF} target='_blank' download block>{labels['Download PDF'][lang]}</Button>
+                                <Button variant='secondary' className='mt-3' href={ResumeCNJPG} target='_blank' download block>{labels['Download JPG'][lang]}</Button>
                             </Col>
                         </Row>
                     </Container>
