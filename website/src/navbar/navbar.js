@@ -40,6 +40,9 @@ export default class TopNavbar extends React.Component {
                 href: "/about-me"
             },
             {
+                item: "divider"
+            },
+            {
                 item: "VSCode",
                 label: labels["VSCode"][lang],
                 href: "https://code.liaohanwen.com"
@@ -48,6 +51,9 @@ export default class TopNavbar extends React.Component {
                 item: "Cloud",
                 label: labels["cloud"][lang],
                 href: "https://cloud.liaohanwen.com"
+            },
+            {
+                item: "divider-horizontal"
             }]
         }
 

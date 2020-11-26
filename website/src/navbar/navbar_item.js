@@ -9,6 +9,17 @@ export default class NavbarItem extends React.Component {
     }
 
     render() {
+        if (this.props.item == "divider") {
+            return <>
+                <div className="divider-horizontal"></div>
+                <div className="divider-vertical"></div>
+            </>
+        }
+
+        if (this.props.item == "divider-horizontal") {
+            return <div className="divider-horizontal"></div>
+        }
+
         return <Nav.Item>
             <Nav.Link active={this.props.bold} href={this.props.href} > {this.props.label} </Nav.Link>
         </Nav.Item>
