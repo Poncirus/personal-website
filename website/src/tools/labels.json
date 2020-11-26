@@ -1,0 +1,26 @@
+{
+    "Tools": {
+        "zh": "工具箱",
+        "en": "Tools "
+    },
+    "list": {
+        "zh": "工具列表",
+        "en": "list"
+    },
+    "sha256": {
+        "zh": "sha256",
+        "en": "sha256"
+    },
+    "sha256 encryption": {
+        "zh": "sha256 编码器",
+        "en": "sha256 encryption"
+    },
+    "Data": {
+        "zh": "数据",
+        "en": "Data"
+    },
+    "SHA-256 hash": {
+        "zh": "SHA-256 哈希",
+        "en": "SHA-256 hash"
+    }
+}

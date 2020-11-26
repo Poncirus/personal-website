@@ -11,14 +11,23 @@ import Sha256 from '@/tools/sha256.js'
 
 import { getUrlParameter } from '@/js/url.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/tools/labels.json')
+const lang = getLanguageCookie()
+
+// set title
+document.title = '橘生淮北 - ' + labels["Tools"][lang]
+
 class Main extends React.Component {
     constructor(props) {
         super(props)
 
         this.toolList = {
             sha256: {
-                item: 'sha256',
-                intro: 'sha256 encryption'
+                item: "sha256",
+                label: labels["sha256"][lang],
+                intro: labels["sha256 encryption"][lang]
             }
         }
 
@@ -55,11 +64,12 @@ class Main extends React.Component {
                 break;
         }
 
+        // items in SecondaryNavbar
         let items = []
-        items.push({ item: 'list', func: () => { this.switchPage('list') } })
+        items.push({ item: labels['list'][lang], func: () => { this.switchPage('list') } })
         Object.keys(this.toolList).forEach(e => {
             let obj = {
-                item: e,
+                item: this.toolList[e]['label'],
                 func: () => { this.switchPage(e) }
             }
             items.push(obj)
@@ -67,7 +77,7 @@ class Main extends React.Component {
 
         return <div>
             <TopNavbar currentPage="Tools"></TopNavbar>
-            <SecondaryNavbar currentPage={this.state.current} items={items} buttons={[]}></SecondaryNavbar>
+            <SecondaryNavbar currentPage={labels[this.state.current][lang]} items={items} buttons={[]}></SecondaryNavbar>
             {page}
         </div>
     }
