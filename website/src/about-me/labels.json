@@ -30,5 +30,17 @@
     "Social Media": {
         "zh": "社交媒体",
         "en": "Social Media"
+    },
+    "Contact": {
+        "zh": "联系方式",
+        "en": "Contact"
+    },
+    "Tel / Wechat": {
+        "zh": "电话 / 微信",
+        "en": "Tel / Wechat"
+    },
+    "Email": {
+        "zh": "邮箱",
+        "en": "Email"
     }
 }
