@@ -1,0 +1,74 @@
+{
+    "Home": {
+        "zh": "首页",
+        "en": "Home"
+    },
+    "Tools": {
+        "zh": "工具箱",
+        "en": "Tools"
+    },
+    "Useful tools": {
+        "zh": "实用工具合集",
+        "en": "Useful tools"
+    },
+    "Tool List": {
+        "zh": "工具列表",
+        "en": "Tool List"
+    },
+    "Articles": {
+        "zh": "文章",
+        "en": "Articles"
+    },
+    "My Notes and thoughts": {
+        "zh": "我的笔记以及想法",
+        "en": "My Notes and thoughts"
+    },
+    "Article List": {
+        "zh": "文章列表",
+        "en": "Article List"
+    },
+    "About me": {
+        "zh": "个人简介",
+        "en": "About me"
+    },
+    "My resume & personal information": {
+        "zh": "关于我的介绍以及简历",
+        "en": "My resume & personal information"
+    },
+    "My informations": {
+        "zh": "我的信息",
+        "en": "My informations"
+    },
+    "VSCode": {
+        "zh": "VSCode",
+        "en": "VSCode"
+    },
+    "Online Vitual Studio Code editor, powered by code-server": {
+        "zh": "Visual Studio Code 在线编辑器，由 code-server 提供",
+        "en": "Online Vitual Studio Code editor, powered by code-server"
+    },
+    "Launch VSCode Online": {
+        "zh": "进入 VSCode",
+        "en": "Launch VSCode Online"
+    },
+    "code-server on Github": {
+        "zh": "在 Github 查看 code-server",
+        "en": "code-server on Github"
+    },
+    "Cloud": {
+        "zh": "云盘",
+        "en": "Cloud"
+    },
+    "My Nextcloud online storage, powered by Nextcloud": {
+        "zh": "我的 NextCloud 在线云盘，由 Nextcloud 提供",
+        "en": "My Nextcloud online storage, powered by Nextcloud"
+    },
+    "Cloud Disk": {
+        "zh": "进入云盘",
+        "en": "Cloud Disk"
+    },
+    "Nextcloud Website": {
+        "zh": "Nextcloud 主页",
+        "en": "Nextcloud Website"
+    }
+}

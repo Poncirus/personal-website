@@ -5,8 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import TopNavbar from '@/navbar/navbar.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/home/labels.json')
+const lang = getLanguageCookie()
+
 // set title
-document.title = '橘生淮北 - Home'
+document.title = '橘生淮北 - ' + labels["Home"][lang]
 
 const navbar = <TopNavbar currentPage="Home"></TopNavbar>
 ReactDOM.render(navbar, document.getElementById('navbar'))
@@ -14,25 +19,25 @@ ReactDOM.render(navbar, document.getElementById('navbar'))
 import Panel from '@/home/panel.js'
 
 const panels = [{
-    header: "Tools",
-    intro: "Some useful tools",
-    items: [{ item: "Tool List", href: "/tools" }]
+    header: labels["Tools"][lang],
+    intro: labels["Useful tools"][lang],
+    items: [{ item: labels["Tool List"][lang], href: "/tools" }]
 }, {
-    header: "Articles",
-    intro: "My notes",
-    items: [{ item: "Article List", href: "/articles/article-list" }]
+    header: labels["Articles"][lang],
+    intro: labels["My Notes and thoughts"][lang],
+    items: [{ item: labels["Article List"][lang], href: "/articles/article-list" }]
 }, {
-    header: "About me",
-    intro: "My informations",
-    items: [{ item: "Informations", href: "/about-me" }]
+    header: labels["About me"][lang],
+    intro: labels["My resume & personal information"][lang],
+    items: [{ item: labels["My informations"][lang], href: "/about-me" }]
 }, {
-    header: "VSCode",
-    intro: "Visual Studio Code online editor, powered by code-server",
-    items: [{ item: "Launch VSCode Online", href: "https://code.liaohanwen.com" }, { item: "code-server on Github", href: "https://github.com/cdr/code-server" }]
+    header: labels["VSCode"][lang],
+    intro: labels["Online Vitual Studio Code editor, powered by code-server"][lang],
+    items: [{ item: labels["Launch VSCode Online"][lang], href: "https://code.liaohanwen.com" }, { item: labels["code-server on Github"][lang], href: "https://github.com/cdr/code-server" }]
 }, {
-    header: "Cloud",
-    intro: "My cloud disk, powered by Nextcloud",
-    items: [{ item: "Cloud Disk", href: "https://cloud.liaohanwen.com" }, { item: "Nextcloud Website", href: "https://nextcloud.com/" }]
+    header: labels["Cloud"][lang],
+    intro: labels["My Nextcloud online storage, powered by Nextcloud"][lang],
+    items: [{ item: labels["Cloud Disk"][lang], href: "https://cloud.liaohanwen.com" }, { item: labels["Nextcloud Website"][lang], href: "https://nextcloud.com/" }]
 }]
 
 ReactDOM.render(panels.map(v => <Panel key={v.header} {...v}></Panel>), document.getElementById('panels'))
