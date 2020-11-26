@@ -27,26 +27,26 @@ class Main extends React.Component {
         return <div className="mb-4">
             <Carousel indicators={false} fade={true} interval={4000} nextIcon={null} prevIcon={null}>
                 <Carousel.Item>
-                    <h1>{labels["My Website"][lang]}</h1>
+                    <h1 className="font-weight-light">{labels["My Website"][lang]}</h1>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>{labels["Tools"][lang]}</h1>
+                    <h1 className="font-weight-light">{labels["Tools"][lang]}</h1>
                     <h4 className="font-weight-light">{labels["Useful tools"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>{labels["Articles"][lang]}</h1>
+                    <h1 className="font-weight-light">{labels["Articles"][lang]}</h1>
                     <h4 className="font-weight-light">{labels["My Notes and thoughts"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>{labels["About me"][lang]}</h1>
+                    <h1 className="font-weight-light">{labels["About me"][lang]}</h1>
                     <h4 className="font-weight-light">{labels["My resume & personal information"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>{labels["VSCode"][lang]}</h1>
+                    <h1 className="font-weight-light">{labels["VSCode"][lang]}</h1>
                     <h4 className="font-weight-light">{labels["Online Vitual Studio Code editor"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h1>{labels["Cloud"][lang]}</h1>
+                    <h1 className="font-weight-light">{labels["Cloud"][lang]}</h1>
                     <h4 className="font-weight-light">{labels["My Nextcloud online storage"][lang]}</h4>
                 </Carousel.Item>
             </Carousel>

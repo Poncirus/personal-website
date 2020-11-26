@@ -8,7 +8,7 @@ export default class Panel extends React.Component {
 
     render() {
         return <div className="jumbotron py-3 shadow border">
-            <h1>{this.props.header}</h1>
+            <h1 className="font-weight-light">{this.props.header}</h1>
             <p className="lead">{this.props.intro}</p>
             <hr className="my-3" />
             {this.props.items.map(v => <PanelItem key={v.item} {...v}></PanelItem>)}
