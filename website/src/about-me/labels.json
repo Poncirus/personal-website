@@ -1,0 +1,34 @@
+{
+    "About me": {
+        "zh": "个人简介",
+        "en": "About me"
+    },
+    "Resume": {
+        "zh": "我的简历",
+        "en": "Resume"
+    },
+    "Resume - CN": {
+        "zh": "中文版",
+        "en": "Resume - CN"
+    },
+    "Resume - EN": {
+        "zh": "英文版",
+        "en": "Resume - EN"
+    },
+    "View in GitHub": {
+        "zh": "在 Github 中查看",
+        "en": "View in GitHub"
+    },
+    "Download PDF": {
+        "zh": "下载 PDF 版本",
+        "en": "Download PDF"
+    },
+    "Download JPG": {
+        "zh": "下载 JPG 版本",
+        "en": "Download JPG"
+    },
+    "Social Media": {
+        "zh": "社交媒体",
+        "en": "Social Media"
+    }
+}
