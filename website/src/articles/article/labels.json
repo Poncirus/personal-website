@@ -1,0 +1,34 @@
+{
+    "Article": {
+        "zh": "文章",
+        "en": "Article"
+    },
+    "Article List": {
+        "zh": "文章列表",
+        "en": "Article List"
+    },
+    "New Article": {
+        "zh": "新建文章",
+        "en": "New Article"
+    },
+    "Edit": {
+        "zh": "编辑",
+        "en": "Edit"
+    },
+    "Created": {
+        "zh": "创建",
+        "en": "Created"
+    },
+    "Modified": {
+        "zh": "修改",
+        "en": "Modified"
+    },
+    "Powered by": {
+        "zh": "基于",
+        "en": "Powered by"
+    },
+    "and": {
+        "zh": "和",
+        "en": "and"
+    }
+}

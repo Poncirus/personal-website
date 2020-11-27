@@ -14,8 +14,13 @@ import SecondaryNavbar from '@/secondary_navbar/secondary_navbar.js'
 
 import Viewer from '@/components/viewer/viewer.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/articles/article/labels.json')
+const lang = getLanguageCookie()
+
 // set title
-document.title = '橘生淮北 - Article'
+document.title = '橘生淮北 - ' + labels['Article'][lang]
 
 // navbar
 const navbar = <TopNavbar currentPage="Articles"></TopNavbar>
@@ -25,14 +30,14 @@ ReactDOM.render(navbar, document.getElementById('navbar'))
 const secondaryNavbarItem = {
     currentPage: "",
     items: [{
-        item: "New Article",
+        item: labels["New Article"][lang],
         func: () => $(location).prop('href', '/articles/editor')
     }, {
-        item: "Article List",
+        item: labels["Article List"][lang],
         func: () => $(location).prop('href', '/articles/article-list')
     }],
     buttons: [{
-        item: 'Edit',
+        item: labels['Edit'][lang],
         type: 'btn-success',
         func: () => $(location).prop('href', '/articles/editor?id=' + getUrlParameter("id"))
     }]
@@ -65,7 +70,7 @@ class Article extends React.Component {
                 </div>
                 <div className="col-12 col-md-6 mb-2">
                     <div className="d-none d-md-block text-right mt-3">
-                        Created: {parseTime(this.state.article.CreateTime)} &nbsp; Modified: {parseTime(this.state.article.LastModification)}
+                        {labels['Created'][lang]}: {parseTime(this.state.article.CreateTime)} &nbsp; {labels['Modified'][lang]}: {parseTime(this.state.article.LastModification)}
                     </div>
                 </div>
             </div>
@@ -81,9 +86,9 @@ class Article extends React.Component {
             </div>
             <Viewer {...this.state.article}></Viewer>
             <div className='my-3 text-muted' style={{ fontSize: '80%' }}>
-                Powered by
+                {labels['Powered by'][lang]}
                 <a target="_blank" href="https://github.com/rexxars/react-markdown" className="mx-1 badge badge-secondary">react-markdown</a>
-                and
+                {labels['and'][lang]}
                 <a target="_blank" href="https://github.com/sindresorhus/github-markdown-css" className="mx-1 badge badge-secondary">github-markdown-css</a>
             </div>
         </div>
