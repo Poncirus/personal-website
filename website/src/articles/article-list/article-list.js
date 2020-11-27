@@ -15,8 +15,13 @@ import Tags from '@/articles/article-list/tags.js'
 import List from '@/articles/article-list/list.js'
 import Alert from '@/articles/article-list/alert.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/articles/article-list/labels.json')
+const lang = getLanguageCookie()
+
 // set title
-document.title = '橘生淮北 - Article List'
+document.title = '橘生淮北 - ' + labels['Article List'][lang]
 
 // navbar
 const navbar = <TopNavbar currentPage="Articles"></TopNavbar>
@@ -24,12 +29,12 @@ ReactDOM.render(navbar, document.getElementById('navbar'))
 
 // secondary navbar
 const secondaryNavbarItem = {
-    currentPage: "Article List",
+    currentPage: labels["Article List"][lang],
     items: [{
-        item: "New Article",
+        item: labels["New Article"][lang],
         func: () => $(location).prop('href', '/articles/editor')
     }, {
-        item: "Article List",
+        item: labels["Article List"][lang],
         func: () => $(location).prop('href', '/articles/article-list')
     }],
     buttons: []

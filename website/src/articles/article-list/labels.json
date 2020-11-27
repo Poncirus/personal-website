@@ -1,0 +1,34 @@
+{
+    "Article List": {
+        "zh": "文章列表",
+        "en": "Article List"
+    },
+    "New Article": {
+        "zh": "新建文章",
+        "en": "New Article"
+    },
+    "Search": {
+        "zh": "搜索",
+        "en": "Search"
+    },
+    "Title": {
+        "zh": "标题",
+        "en": "Title"
+    },
+    "Tags": {
+        "zh": "标签",
+        "en": "Tags"
+    },
+    "Clear": {
+        "zh": "清空",
+        "en": "Clear"
+    },
+    "Created": {
+        "zh": "创建",
+        "en": "Created"
+    },
+    "Modified": {
+        "zh": "修改",
+        "en": "Modified"
+    }
+}

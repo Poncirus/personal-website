@@ -5,6 +5,11 @@ import $ from 'jquery'
 
 import { config } from '@/config/config.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/articles/article-list/labels.json')
+const lang = getLanguageCookie()
+
 export default class Tags extends React.Component {
     constructor(props) {
         super(props)
@@ -25,8 +30,8 @@ export default class Tags extends React.Component {
     render() {
         return <div className="card shadow mb-3">
             <div className="card-header">
-                Tags
-                <button type="button" className="btn btn-sm btn-outline-secondary float-right my-n1" onClick={this.clear}>Clear</button>
+                {labels['Tags'][lang]}
+                <button type="button" className="btn btn-sm btn-outline-secondary float-right my-n1" onClick={this.clear}>{labels['Clear'][lang]}</button>
             </div>
             <div className="card-body p-3">
                 <div className='btn-group-toggle' data-toggle='buttons'>

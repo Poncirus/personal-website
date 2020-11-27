@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom'
 
 import { parseTime } from '@/js/time.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/articles/article-list/labels.json')
+const lang = getLanguageCookie()
+
 export default class List extends React.Component {
     constructor(props) {
         super(props)
@@ -27,7 +32,7 @@ class Article extends React.Component {
                 <div className="col-12 col-md-6">
                     <h5 className="text-dark font-weight-bold"> {this.props.Title} </h5>
                 </div>
-                <div className="d-none d-md-block col-md-6 text-right"> Created: {parseTime(this.props.CreateTime)} &nbsp; Modified: {parseTime(this.props.LastModification)} </div>
+                <div className="d-none d-md-block col-md-6 text-right"> {labels['Created'][lang]}: {parseTime(this.props.CreateTime)} &nbsp; {labels['Modified'][lang]}: {parseTime(this.props.LastModification)} </div>
             </div>
             <div className="row">
                 <div className="col-12 col-md-8"> {this.props.Description} </div>
