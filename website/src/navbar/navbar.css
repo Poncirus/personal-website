@@ -83,14 +83,15 @@ body {
 .lh-125 { line-height: 1.25; }
 .lh-150 { line-height: 1.5; }
 
-.divider-vertical {
+.divider {
   overflow: hidden;
   margin: 0.5rem 0.5rem;
   border-left: 1px solid rgba(255, 255, 255, .5);
+  border-top: 1px solid rgba(255, 255, 255, .5);
 }
 
 .divider-horizontal {
   overflow: hidden;
-  margin: 0.5rem 0rem;
+  margin: 0.5rem 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, .5);
 }

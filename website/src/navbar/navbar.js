@@ -77,7 +77,7 @@ export default class TopNavbar extends React.Component {
                     {this.state.items.map(v => <NavbarItem key={v.item} bold={this.props.currentPage == v.item} {...v}></NavbarItem>)}
                 </Nav>
                 <Nav>
-                    <NavDropdown title={labels["language"][lang]} className="mr-3">
+                    <NavDropdown title={labels["language"][lang]} className="mx-2">
                         <NavDropdown.Item onSelect={(e) => { this.changeLanguage("zh") }}>中文</NavDropdown.Item>
                         <NavDropdown.Item onSelect={(e) => { this.changeLanguage("en") }}>English</NavDropdown.Item>
                     </NavDropdown>
