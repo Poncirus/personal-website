@@ -44,7 +44,7 @@
         "en": "VSCode"
     },
     "Online Vitual Studio Code editor, powered by code-server": {
-        "zh": "Visual Studio Code 在线编辑器，由 code-server 提供",
+        "zh": "Visual Studio Code 在线编辑器，基于 code-server",
         "en": "Online Vitual Studio Code editor, powered by code-server"
     },
     "Launch VSCode Online": {
@@ -59,9 +59,9 @@
         "zh": "云盘",
         "en": "Cloud"
     },
-    "My Nextcloud online storage, powered by Nextcloud": {
-        "zh": "我的 NextCloud 在线云盘，由 Nextcloud 提供",
-        "en": "My Nextcloud online storage, powered by Nextcloud"
+    "My online storage, powered by Nextcloud": {
+        "zh": "我的在线云盘，基于 Nextcloud",
+        "en": "My online storage, powered by Nextcloud"
     },
     "Cloud Disk": {
         "zh": "进入云盘",

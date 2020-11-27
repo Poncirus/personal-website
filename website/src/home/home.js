@@ -36,7 +36,7 @@ const panels = [{
     items: [{ item: labels["Launch VSCode Online"][lang], href: "https://code.liaohanwen.com" }, { item: labels["code-server on Github"][lang], href: "https://github.com/cdr/code-server" }]
 }, {
     header: labels["Cloud"][lang],
-    intro: labels["My Nextcloud online storage, powered by Nextcloud"][lang],
+    intro: labels["My online storage, powered by Nextcloud"][lang],
     items: [{ item: labels["Cloud Disk"][lang], href: "https://cloud.liaohanwen.com" }, { item: labels["Nextcloud Website"][lang], href: "https://nextcloud.com/" }]
 }]
 
