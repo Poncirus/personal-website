@@ -17,8 +17,13 @@ import Title from '@/articles/editor/title.js'
 import Tags from '@/articles/editor/tags.js'
 import MDE from '@/articles/editor/mde.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/articles/editor/labels.json')
+const lang = getLanguageCookie()
+
 // set title
-document.title = '橘生淮北 - Editor'
+document.title = '橘生淮北 - ' + labels['Editor'][lang]
 
 class Main extends React.Component {
     constructor(props) {
@@ -52,20 +57,20 @@ class Main extends React.Component {
         }
 
         this.secondaryNavbarItem = {
-            currentPage: getUrlParameter('id') != null ? '' : 'New Article',
+            currentPage: getUrlParameter('id') != null ? '' : labels["New Article"][lang],
             items: [{
-                item: "New Article",
+                item: labels["New Article"][lang],
                 func: () => $(location).prop('href', '/articles/editor')
             }, {
-                item: "Article List",
+                item: labels["Article List"][lang],
                 func: () => $(location).prop('href', '/articles/article-list')
             }],
             buttons: [{
-                item: 'Save',
+                item: labels['Save'][lang],
                 type: 'btn-success',
                 func: this.save
             }, {
-                item: 'Delete',
+                item: labels['Delete'][lang],
                 type: 'btn-danger',
                 func: this.delete
             }]
@@ -79,8 +84,8 @@ class Main extends React.Component {
         if (getUsernameCookie() == null) {
             this.setState({
                 modal: {
-                    title: 'Fail',
-                    content: 'Please sign in',
+                    title: labels['Fail'][lang],
+                    content: labels['Please sign in'][lang],
                     show: true,
                     callback: () => $(location).prop('href', '/sign-in')
                 }
@@ -93,7 +98,7 @@ class Main extends React.Component {
     render() {
         // set title
         if (this.state.title == "") {
-            document.title = '橘生淮北 - Editor'
+            document.title = '橘生淮北 - ' + labels['Editor'][lang]
         } else {
             document.title = '橘生淮北 - ' + this.state.title
         }
@@ -108,7 +113,7 @@ class Main extends React.Component {
                     <MDE markdown={this.state.markdown} changeMarkdown={this.changeMarkdown} setNavbarZIndex={this.setNavbarZIndex}></MDE>
                 </div>
                 <div className='mb-3 text-muted' style={{ fontSize: '80%' }}>
-                    Powered by
+                    {labels['Powered by'][lang]}
                     <a target="_blank" href="https://github.com/RIP21/react-simplemde-editor" className="mx-1 badge badge-secondary">react-simplemde-editor</a>
                 </div>
                 <Pop {...this.state.modal} closeModal={this.closeModal}></Pop>
@@ -137,8 +142,8 @@ class Main extends React.Component {
                 if (status != "success") {
                     this.setState({
                         modal: {
-                            title: 'Fail',
-                            content: 'Save article fail',
+                            title: labels['Fail'][lang],
+                            content: labels['Save article fail'][lang],
                             show: true,
                             callback: null
                         }
@@ -152,8 +157,8 @@ class Main extends React.Component {
                     this.setState({ id: json.ID })
                     this.setState({
                         modal: {
-                            title: 'Success',
-                            content: 'Save article success',
+                            title: labels['Success'][lang],
+                            content: labels['Save article success'][lang],
                             show: true,
                             callback: null
                         }
@@ -185,8 +190,8 @@ class Main extends React.Component {
                 if (status != "success") {
                     this.setState({
                         modal: {
-                            title: 'Fail',
-                            content: 'Delete article fail',
+                            title: labels['Fail'][lang],
+                            content: labels['Delete article fail'][lang],
                             show: true,
                             callback: null
                         }
@@ -200,8 +205,8 @@ class Main extends React.Component {
                 if (json.Result == "Success") {
                     this.setState({
                         modal: {
-                            title: json.Result,
-                            content: 'Delete article successful',
+                            title: labels['Success'][lang],
+                            content: labels['Delete article success'][lang],
                             show: true,
                             callback: () => $(location).prop('href', '/articles/article-list')
                         }

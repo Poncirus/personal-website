@@ -4,6 +4,11 @@ import $ from 'jquery'
 
 import { config } from '@/config/config.js'
 
+import { getLanguageCookie } from '@/js/lang.js'
+
+const labels = require('@/articles/editor/labels.json')
+const lang = getLanguageCookie()
+
 export default class Tags extends React.Component {
     constructor(props) {
         super(props)
@@ -35,7 +40,7 @@ export default class Tags extends React.Component {
                         <div className="input-group input-group-sm">
                             <input type="text" className="form-control" onChange={this.changeTagInput} value={this.state.tagInput} />
                             <div className="input-group-append">
-                                <button className="btn btn-outline-secondary" type="button" onClick={this.addTag}>Add</button>
+                                <button className="btn btn-outline-secondary" type="button" onClick={this.addTag}>{labels['Add'][lang]}</button>
                             </div>
                         </div>
                     </div>

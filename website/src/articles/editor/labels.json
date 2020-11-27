@@ -1,0 +1,66 @@
+{
+    "Editor": {
+        "zh": "编辑器",
+        "en": "Editor"
+    },
+    "Article List": {
+        "zh": "文章列表",
+        "en": "Article List"
+    },
+    "New Article": {
+        "zh": "新建文章",
+        "en": "New Article"
+    },
+    "Save": {
+        "zh": "保存",
+        "en": "Save"
+    },
+    "Delete": {
+        "zh": "删除",
+        "en": "Delete"
+    },
+    "Fail": {
+        "zh": "失败",
+        "en": "Fail"
+    },
+    "Please sign in": {
+        "zh": "请登录",
+        "en": "Please sign in"
+    },
+    "Powered by": {
+        "zh": "基于",
+        "en": "Powered by"
+    },
+    "Save article fail": {
+        "zh": "保存失败",
+        "en": "Save article fail"
+    },
+    "Success": {
+        "zh": "成功",
+        "en": "Success"
+    },
+    "Save article success": {
+        "zh": "保存成功",
+        "en": "Save article success"
+    },
+    "Delete article fail": {
+        "zh": "删除失败",
+        "en": "Delete article fail"
+    },
+    "Delete article success": {
+        "zh": "删除成功",
+        "en": "Delete article success"
+    },
+    "Add": {
+        "zh": "添加",
+        "en": "Add"
+    },
+    "Title": {
+        "zh": "标题",
+        "en": "Title"
+    },
+    "Description": {
+        "zh": "简介",
+        "en": "Description"
+    }
+}
