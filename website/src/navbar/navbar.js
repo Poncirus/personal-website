@@ -21,27 +21,27 @@ export default class TopNavbar extends React.Component {
         this.state = {
             items: [{
                 item: "Home",
-                label: labels["home"][lang],
+                label: labels["Home"][lang],
                 href: "/home"
             },
             {
                 item: "Tools",
-                label: labels["tools"][lang],
+                label: labels["Tools"][lang],
                 href: "/tools"
             },
             {
                 item: "Articles",
-                label: labels["articles"][lang],
+                label: labels["Articles"][lang],
                 href: "/articles/article-list"
             },
             {
                 item: "About me",
-                label: labels["about-me"][lang],
+                label: labels["About me"][lang],
                 href: "/about-me"
             },
             {
                 item: "Neighbor",
-                label: labels["neighbor"][lang],
+                label: labels["Neighbors"][lang],
                 href: "/neighbor"
             },
             {
@@ -54,7 +54,7 @@ export default class TopNavbar extends React.Component {
             },
             {
                 item: "Cloud",
-                label: labels["cloud"][lang],
+                label: labels["Cloud"][lang],
                 href: "https://cloud.liaohanwen.com"
             },
             {
@@ -82,12 +82,12 @@ export default class TopNavbar extends React.Component {
                     {this.state.items.map(v => <NavbarItem key={v.item} bold={this.props.currentPage == v.item} {...v}></NavbarItem>)}
                 </Nav>
                 <Nav>
-                    <NavDropdown title={labels["language"][lang]} className="mx-2">
+                    <NavDropdown title={labels["Language"][lang]} className="mx-2">
                         <NavDropdown.Item onSelect={(e) => { this.changeLanguage("zh") }}>中文</NavDropdown.Item>
                         <NavDropdown.Item onSelect={(e) => { this.changeLanguage("en") }}>English</NavDropdown.Item>
                     </NavDropdown>
                     {getUsernameCookie() == null ?
-                        <NavbarItem item="sign-in" label={labels["sign-in"][lang]} href='/sign-in' bold={this.props.currentPage == "Sign in"} ></NavbarItem> :
+                        <NavbarItem item="Sign in" label={labels["sign-in"][lang]} href='/sign-in' bold={this.props.currentPage == "Sign in"} ></NavbarItem> :
                         <NavbarItem item={getUsernameCookie()} label={getUsernameCookie()}></NavbarItem>}
                 </Nav>
             </Navbar.Collapse>

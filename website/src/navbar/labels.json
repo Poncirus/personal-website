@@ -1,38 +1,38 @@
 {
-    "home": {
+    "Home": {
         "zh": "首页",
         "en": "Home"
     },
-    "tools": {
+    "Tools": {
         "zh": "工具箱",
         "en": "Tools"
     },
-    "articles": {
+    "Articles": {
         "zh": "文章",
         "en": "Articles"
     },
-    "about-me": {
+    "About me": {
         "zh": "个人简介",
         "en": "About me"
+    },
+    "Neighbors": {
+        "zh": "邻居",
+        "en": "Neighbors"
     },
     "VSCode": {
         "zh": "VSCode",
         "en": "VSCode"
     },
-    "cloud": {
+    "Cloud": {
         "zh": "云盘",
         "en": "Cloud"
     },
-    "language": {
+    "Language": {
         "zh": "语言",
         "en": "Language"
     },
-    "sign-in": {
+    "Sign in": {
         "zh": "登录",
         "en": "Sign in"
-    },
-    "neighbor": {
-        "zh": "邻居",
-        "en": "Neighbor"
     }
 }
