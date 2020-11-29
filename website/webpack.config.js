@@ -47,6 +47,11 @@ const htmlPlugin = [
         filename: 'about-me/index.html',
         template: path.join(__dirname, './src/about-me/index.html'),
         chunks: ["about_me"]
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'neighbor/index.html',
+        template: path.join(__dirname, './src/neighbor/index.html'),
+        chunks: ["neighbor"]
     })
 ]
 
@@ -62,7 +67,8 @@ module.exports = {
         editor: './src/articles/editor/editor.js',
         sign_in: './src/sign-in/sign-in.js',
         tools: './src/tools/tools.js',
-        about_me: './src/about-me/about-me.js'
+        about_me: './src/about-me/about-me.js',
+        neighbor: './src/neighbor/neighbor.js'
     },
     output: {
         filename: 'js/[name].js',
