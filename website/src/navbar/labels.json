@@ -30,5 +30,9 @@
     "sign-in": {
         "zh": "登录",
         "en": "Sign in"
+    },
+    "neighbor": {
+        "zh": "邻居",
+        "en": "Neighbor"
     }
 }

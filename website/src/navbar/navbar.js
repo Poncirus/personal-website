@@ -40,6 +40,11 @@ export default class TopNavbar extends React.Component {
                 href: "/about-me"
             },
             {
+                item: "Neighbor",
+                label: labels["neighbor"][lang],
+                href: "/neighbor"
+            },
+            {
                 item: "divider"
             },
             {
