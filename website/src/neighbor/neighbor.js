@@ -28,6 +28,7 @@ class Main extends React.Component {
             <TopNavbar currentPage='Neighbor'></TopNavbar>
             <Container className='mt-4'>
                 <Neighbor></Neighbor>
+                <Subscribe></Subscribe>
             </Container>
         </Container>
     }
@@ -71,6 +72,35 @@ class NeighborItem extends React.Component {
     }
 }
 
+class Subscribe extends React.Component {
+    render() {
+        return <Jumbotron className='py-3 shadow border'>
+            <h1 className="font-weight-light">{labels['Become neighbor'][lang]}</h1>
+            <hr className="my-3" />
+            <Container>
+                <Row>
+                    <Col xs={12} md={6} className="mt-2">
+                        <p className="lead">{labels['Site information'][lang]}</p>
+                        <ul className="pl-4">
+                            <li className="text-break">{labels['Profile'][lang]}: https://liaohanwen.com/profile.png</li>
+                            <li>{labels['Name'][lang]}: 橘生淮北</li>
+                            <li>{labels['Discription'][lang]}: 橘生淮北则为枳 </li>
+                            <li>{labels['Url'][lang]}: https://liaohanwen.com</li>
+                        </ul>
+                    </Col>
+                    <Col xs={12} md={6} className="mt-2">
+                        <p className="lead">{labels['Requirement'][lang]}</p>
+                        <ul className="pl-4">
+                            <li>{labels['Add my site'][lang]}</li>
+                            <li>{labels['It is your personal website'][lang]}</li>
+                            <li>{labels['Send your information to '][lang]} <a href="mailto:web@liaohanwen.com" className="text-reset text-decoration-none">web@liaohanwen.com</a></li>
+                        </ul>
+                    </Col>
+                </Row>
+            </Container>
+        </Jumbotron >
+    }
+}
 
 // main
 ReactDOM.render(<Main></Main>, document.getElementById('main'))

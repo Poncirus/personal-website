@@ -3,44 +3,44 @@
         "zh": "邻居",
         "en": "Neighbor"
     },
-    "Resume": {
-        "zh": "我的简历",
-        "en": "Resume"
+    "Become neighbor": {
+        "zh": "申请友链",
+        "en": "Become neighbor"
     },
-    "Resume - CN": {
-        "zh": "中文版",
-        "en": "Resume - CN"
+    "Site information": {
+        "zh": "本站信息",
+        "en": "Site information"
     },
-    "Resume - EN": {
-        "zh": "英文版",
-        "en": "Resume - EN"
+    "Profile": {
+        "zh": "头像",
+        "en": "Profile"
     },
-    "View in GitHub": {
-        "zh": "在 Github 中查看",
-        "en": "View in GitHub"
+    "Name": {
+        "zh": "名称",
+        "en": "Name"
     },
-    "Download PDF": {
-        "zh": "下载 PDF 版本",
-        "en": "Download PDF"
+    "Discription": {
+        "zh": "介绍",
+        "en": "Discription"
     },
-    "Download JPG": {
-        "zh": "下载 JPG 版本",
-        "en": "Download JPG"
+    "Url": {
+        "zh": "链接",
+        "en": "Url"
     },
-    "Social Media": {
-        "zh": "社交媒体",
-        "en": "Social Media"
+    "Requirement": {
+        "zh": "申请要求",
+        "en": "Requirement"
     },
-    "Contact": {
-        "zh": "联系方式",
-        "en": "Contact"
+    "Add my site": {
+        "zh": "添加上本站的链接",
+        "en": "Add my site"
     },
-    "Tel / Wechat": {
-        "zh": "电话 / 微信",
-        "en": "Tel / Wechat"
+    "It is your personal website": {
+        "zh": "原创博客",
+        "en": "It is your personal website"
     },
-    "Email": {
-        "zh": "邮箱",
-        "en": "Email"
+    "Send your information to ": {
+        "zh": "发送网站信息到",
+        "en": "Send your information to "
     }
 }

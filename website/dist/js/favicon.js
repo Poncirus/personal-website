@@ -178,7 +178,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _favicon_android_chrome_192x192_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/favicon/android-chrome-192x192.png */ \"./src/favicon/android-chrome-192x192.png\");\n/* harmony import */ var _favicon_safari_pinned_tab_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/favicon/safari-pinned-tab.svg */ \"./src/favicon/safari-pinned-tab.svg\");\n/* harmony import */ var _favicon_android_chrome_256x256_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/favicon/android-chrome-256x256.png */ \"./src/favicon/android-chrome-256x256.png\");\n/* harmony import */ var _favicon_apple_touch_icon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/favicon/apple-touch-icon.png */ \"./src/favicon/apple-touch-icon.png\");\n/* harmony import */ var _favicon_browserconfig_xml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/favicon/browserconfig.xml */ \"./src/favicon/browserconfig.xml\");\n/* harmony import */ var _favicon_favicon_16x16_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/favicon/favicon-16x16.png */ \"./src/favicon/favicon-16x16.png\");\n/* harmony import */ var _favicon_favicon_32x32_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/favicon/favicon-32x32.png */ \"./src/favicon/favicon-32x32.png\");\n/* harmony import */ var _favicon_favicon_ico__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/favicon/favicon.ico */ \"./src/favicon/favicon.ico\");\n/* harmony import */ var _favicon_mstile_150x150_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/favicon/mstile-150x150.png */ \"./src/favicon/mstile-150x150.png\");\n/* harmony import */ var _favicon_site_webmanifest__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/favicon/site.webmanifest */ \"./src/favicon/site.webmanifest\");\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/favicon/favicon.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _favicon_android_chrome_192x192_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/favicon/android-chrome-192x192.png */ \"./src/favicon/android-chrome-192x192.png\");\n/* harmony import */ var _favicon_safari_pinned_tab_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/favicon/safari-pinned-tab.svg */ \"./src/favicon/safari-pinned-tab.svg\");\n/* harmony import */ var _favicon_android_chrome_256x256_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/favicon/android-chrome-256x256.png */ \"./src/favicon/android-chrome-256x256.png\");\n/* harmony import */ var _favicon_apple_touch_icon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/favicon/apple-touch-icon.png */ \"./src/favicon/apple-touch-icon.png\");\n/* harmony import */ var _favicon_browserconfig_xml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/favicon/browserconfig.xml */ \"./src/favicon/browserconfig.xml\");\n/* harmony import */ var _favicon_favicon_16x16_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/favicon/favicon-16x16.png */ \"./src/favicon/favicon-16x16.png\");\n/* harmony import */ var _favicon_favicon_32x32_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/favicon/favicon-32x32.png */ \"./src/favicon/favicon-32x32.png\");\n/* harmony import */ var _favicon_favicon_ico__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/favicon/favicon.ico */ \"./src/favicon/favicon.ico\");\n/* harmony import */ var _favicon_mstile_150x150_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/favicon/mstile-150x150.png */ \"./src/favicon/mstile-150x150.png\");\n/* harmony import */ var _favicon_site_webmanifest__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/favicon/site.webmanifest */ \"./src/favicon/site.webmanifest\");\n/* harmony import */ var _favicon_profile_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/favicon/profile.png */ \"./src/favicon/profile.png\");\n\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/favicon/favicon.js?");
 
 /***/ }),
 
@@ -191,6 +191,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fav
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"mstile-150x150.png\");\n\n//# sourceURL=webpack:///./src/favicon/mstile-150x150.png?");
+
+/***/ }),
+
+/***/ "./src/favicon/profile.png":
+/*!*********************************!*\
+  !*** ./src/favicon/profile.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"profile.png\");\n\n//# sourceURL=webpack:///./src/favicon/profile.png?");
 
 /***/ }),
 
