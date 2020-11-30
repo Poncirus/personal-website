@@ -44,6 +44,12 @@ class Neighbor extends React.Component {
                 name: "小游",
                 discription: "二次元技术宅",
                 href: "https://xiaoyou66.com"
+            },
+            {
+                profile: "https://s1.ax1x.com/2020/11/05/BW8ogf.jpg",
+                name: "Black_angel",
+                discription: "欢迎~welcome！",
+                href: "https://blog.black-angel.icu/"
             }
         ]
     }
@@ -61,7 +67,7 @@ class Neighbor extends React.Component {
 
 class NeighborItem extends React.Component {
     render() {
-        return <Col xs={12} md={3} className='mt-2 d-flex' style={{ transform: "rotate(0)" }}>
+        return <Col xs={12} md={4} className='mt-2 d-flex' style={{ transform: "rotate(0)" }}>
             <img src={this.props.profile} className="mr-3 rounded-lg" style={{ height: '60px' }} />
             <div className="lh-100 mt-1">
                 <h5>{this.props.name}</h5>
