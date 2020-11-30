@@ -87,7 +87,7 @@ export default class TopNavbar extends React.Component {
                         <NavDropdown.Item onSelect={(e) => { this.changeLanguage("en") }}>English</NavDropdown.Item>
                     </NavDropdown>
                     {getUsernameCookie() == null ?
-                        <NavbarItem item="Sign in" label={labels["sign-in"][lang]} href='/sign-in' bold={this.props.currentPage == "Sign in"} ></NavbarItem> :
+                        <NavbarItem item="Sign in" label={labels["Sign in"][lang]} href='/sign-in' bold={this.props.currentPage == "Sign in"} ></NavbarItem> :
                         <NavbarItem item={getUsernameCookie()} label={getUsernameCookie()}></NavbarItem>}
                 </Nav>
             </Navbar.Collapse>
