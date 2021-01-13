@@ -46,12 +46,6 @@ class Neighbor extends React.Component {
                 href: "https://xiaoyou66.com"
             },
             {
-                profile: "https://s1.ax1x.com/2020/11/05/BW8ogf.jpg",
-                name: "Black_angel",
-                discription: "欢迎~welcome！",
-                href: "https://blog.black-angel.icu/"
-            },
-            {
                 profile: "https://picture.suze666.top/images/2020/02/20/22da933f1a91d0a482256d0a88440337.jpg",
                 name: "苏泽",
                 discription: "不爱学写代码的菜鸡",
