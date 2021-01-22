@@ -225,66 +225,6 @@ func getTags(w http.ResponseWriter, r *http.Request) {
 	Log.LogInfo("get-tags, finish")
 }
 
-func tagSearch(w http.ResponseWriter, r *http.Request) {
-	Log.LogWarn("tag-search, new request")
-
-	type Response struct {
-		Result   string
-		Articles []database.Article
-	}
-
-	var response Response
-
-	// get request
-	r.ParseForm()
-	form := r.Form
-	tags := form["tags[]"]
-
-	articles, err := database.FindArticleWithTag(tags)
-	if err != nil {
-		response.Result = err.Error()
-		Log.LogWarn(err)
-		reply(w, response)
-		return
-	}
-
-	response.Result = "Success"
-	response.Articles = articles
-
-	reply(w, response)
-	Log.LogInfo("tag-search, finish")
-}
-
-func titleSearch(w http.ResponseWriter, r *http.Request) {
-	Log.LogWarn("title-search, new request")
-
-	type Response struct {
-		Result   string
-		Articles []database.Article
-	}
-
-	var response Response
-
-	// get request
-	r.ParseForm()
-	form := r.Form
-	title := form["title"][0]
-
-	articles, err := database.FindArticleWithTitle(title)
-	if err != nil {
-		response.Result = err.Error()
-		Log.LogWarn(err)
-		reply(w, response)
-		return
-	}
-
-	response.Result = "Success"
-	response.Articles = articles
-
-	reply(w, response)
-	Log.LogInfo("title-search, finish")
-}
-
 func searchArticle(w http.ResponseWriter, r *http.Request) {
 	Log.LogWarn("search-article, new request")
 
