@@ -54,8 +54,8 @@ class ArtileList extends React.Component {
             tags: [],
             count: 30,
             offset: 0,
-            sort: "CreateTime",
-            order: 1
+            sort: "createtime",
+            order: -1
         }
         this.refresh = this.refresh.bind(this)
         this.filterTitle = this.filterTitle.bind(this)
