@@ -49,10 +49,17 @@ class ArtileList extends React.Component {
         this.state = {
             articles: [],
             alert: {},
-            filter: {}
+
+            title: "",
+            tags: [],
+            count: 30,
+            offset: 0,
+            sort: "CreateTime",
+            order: 1
         }
         this.refresh = this.refresh.bind(this)
-        this.filter = this.filter.bind(this)
+        this.filterTitle = this.filterTitle.bind(this)
+        this.filterTags = this.filterTags.bind(this)
     }
 
     componentDidMount() {
@@ -62,7 +69,7 @@ class ArtileList extends React.Component {
     render() {
         var alert = null;
         if (Object.keys(this.state.alert) != 0) {
-            alert = <Alert {...this.state.alert} filter={this.filter}></Alert>
+            alert = <Alert {...this.state.alert} filterTitle={this.filterTitle}></Alert>
         }
 
         return <div className="row">
@@ -71,47 +78,29 @@ class ArtileList extends React.Component {
                 <List articles={this.state.articles}></List>
             </div>
             <div className="col-12 col-md-4">
-                <Search filter={this.filter}></Search>
-                <Tags filter={this.filter}></Tags>
+                <Search filterTitle={this.filterTitle}></Search>
+                <Tags filterTags={this.filterTags}></Tags>
             </div>
         </div>
     }
 
     refresh() {
-        // clear alert
-        this.setState({ alert: {} })
-
-
-        if (this.state.filter.hasOwnProperty('keyword')) {
-            $.post(config.server + "/go/title-search",
-                {
-                    title: this.state.filter.keyword
-                },
-                function (data, status) {
-                    // request not success
-                    if (status != "success") {
-                        return
-                    }
-                    // parse data to json object
-                    var json = JSON.parse(data)
-
-                    if (json.Result != "Success") {
-                        return
-                    }
-
-                    // articles
-                    this.setState({ articles: json.Articles })
-
-                    // alert
-                    this.setState({ alert: { keyword: this.state.filter.keyword } })
-                }.bind(this));
-            return
+        // set alert
+        if (this.state.title != "") {
+            this.setState({ alert: { keyword: this.state.title } })
+        } else {
+            this.setState({ alert: {} })
         }
 
-        if (this.state.filter.hasOwnProperty('tags')) {
-            $.post(config.server + "/go/tag-search",
+        // set articles
+        $.post(config.server + "/go/search-article",
                 {
-                    tags: this.state.filter.tags
+                    title: this.state.title,
+                    tags: this.state.tags,
+                    count: this.state.count,
+                    offset: this.state.offset,
+                    sort: this.state.sort,
+                    order: this.state.order
                 },
                 function (data, status) {
                     // request not success
@@ -128,30 +117,14 @@ class ArtileList extends React.Component {
                     // articles
                     this.setState({ articles: json.Articles })
                 }.bind(this));
-            return
-        }
-
-        $.get(config.server + "/go/get-article-list",
-            function (data, status) {
-                // request not success
-                if (status != "success") {
-                    console.log("request not success")
-                    return;
-                }
-                // parse data to json object
-                var json = JSON.parse(data);
-
-                if (json.Result != "Success") {
-                    console.log("request not success")
-                    return;
-                }
-
-                this.setState({ articles: json.Articles })
-            }.bind(this))
     }
 
-    filter(filter) {
-        this.setState({ filter: filter }, this.refresh)
+    filterTitle(title) {
+        this.setState({ title: title }, this.refresh)
+    }
+
+    filterTags(tags) {
+        this.setState({tags: tags}, this.refresh)
     }
 }
 

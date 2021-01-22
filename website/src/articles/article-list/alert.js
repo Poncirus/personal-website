@@ -18,6 +18,6 @@ export default class Alert extends React.Component {
     }
 
     dismiss() {
-        this.props.filter({})
+        this.props.filterTitle("")
     }
 }

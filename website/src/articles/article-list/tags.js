@@ -55,7 +55,7 @@ export default class Tags extends React.Component {
     }
 
     refresh() {
-        this.props.filter({ tags: this.state.selected })
+        this.props.filterTags(this.state.selected)
     }
 
     loadTag() {

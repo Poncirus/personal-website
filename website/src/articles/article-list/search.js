@@ -37,6 +37,6 @@ export default class Search extends React.Component {
     }
 
     search() {
-        this.props.filter({ keyword: this.state.keyword })
+        this.props.filterTitle(this.state.keyword)
     }
 }
