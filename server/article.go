@@ -8,31 +8,6 @@ import (
 	database "github.com/LiaoHanwen/personal-website/server/mongodb"
 )
 
-func getArticleList(w http.ResponseWriter, r *http.Request) {
-	Log.LogWarn("get-article-list, new request")
-
-	type Response struct {
-		Result   string
-		Articles []database.Article
-	}
-
-	var response Response
-
-	articles, err := database.FindAllArticle()
-	if err != nil {
-		response.Result = err.Error()
-		Log.LogWarn(err)
-		reply(w, response)
-		return
-	}
-
-	response.Result = "Success"
-	response.Articles = articles
-
-	reply(w, response)
-	Log.LogInfo("get-article-list, finish")
-}
-
 func getArticle(w http.ResponseWriter, r *http.Request) {
 	Log.LogWarn("get-article, new request")
 

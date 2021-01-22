@@ -46,7 +46,6 @@ func main() {
 
 	http.HandleFunc("/go/save-article", saveArticle)
 	http.HandleFunc("/go/delete-article", deleteArticle)
-	http.HandleFunc("/go/get-article-list", getArticleList)
 	http.HandleFunc("/go/get-article", getArticle)
 	http.HandleFunc("/go/search-article", searchArticle)
 	http.HandleFunc("/go/get-tags", getTags)

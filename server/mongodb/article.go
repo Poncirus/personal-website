@@ -94,26 +94,6 @@ func FindAritcle(title string, tags []string, count int, offset int, sort string
 	return results, nil
 }
 
-// FindAllArticle find all articles
-func FindAllArticle() ([]Article, error) {
-	collection := c.Database("personal-website").Collection("article")
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
-
-	cursor, err := collection.Find(ctx, bson.M{})
-
-	if err != nil {
-		return nil, err
-	}
-
-	var results []Article
-	if err = cursor.All(context.TODO(), &results); err != nil {
-		log.Fatal(err)
-	}
-
-	return results, nil
-}
-
 // FindOneArticle find article with id
 func FindOneArticle(hexID string) (*Article, error) {
 	collection := c.Database("personal-website").Collection("article")
