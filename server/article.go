@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 	"time"
 
 	database "github.com/LiaoHanwen/personal-website/server/mongodb"
@@ -270,6 +271,62 @@ func titleSearch(w http.ResponseWriter, r *http.Request) {
 	title := form["title"][0]
 
 	articles, err := database.FindArticleWithTitle(title)
+	if err != nil {
+		response.Result = err.Error()
+		Log.LogWarn(err)
+		reply(w, response)
+		return
+	}
+
+	response.Result = "Success"
+	response.Articles = articles
+
+	reply(w, response)
+	Log.LogInfo("title-search, finish")
+}
+
+func searchArticle(w http.ResponseWriter, r *http.Request) {
+	Log.LogWarn("search-article, new request")
+
+	type Response struct {
+		Result   string
+		Articles []database.Article
+	}
+
+	var response Response
+
+	// get request
+	r.ParseForm()
+	form := r.Form
+	title := form["title"][0]
+	tags := form["tags[]"]
+	if tags == nil {
+		tags = []string{}
+	}
+	count, err := strconv.Atoi(form["count"][0])
+	if err != nil {
+		response.Result = err.Error()
+		Log.LogWarn(err)
+		reply(w, response)
+		return
+	}
+	offset, err := strconv.Atoi(form["offset"][0])
+	if err != nil {
+		response.Result = err.Error()
+		Log.LogWarn(err)
+		reply(w, response)
+		return
+	}
+	sort := form["sort"][0]
+	order, err := strconv.Atoi(form["order"][0])
+	if err != nil {
+		response.Result = err.Error()
+		Log.LogWarn(err)
+		reply(w, response)
+		return
+	}
+
+	articles, err := database.FindAritcle(title, tags, count, offset, sort, order)
 	if err != nil {
 		response.Result = err.Error()
 		Log.LogWarn(err)

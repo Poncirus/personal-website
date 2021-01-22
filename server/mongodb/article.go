@@ -8,6 +8,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 // ArticleID is primitive.ObjectID
@@ -61,6 +62,36 @@ func SaveArticle(article Article) (string, error) {
 	}
 
 	return id.Hex(), nil
+}
+
+// FindAritcle find articles meeting requirements
+func FindAritcle(title string, tags []string, count int, offset int, sort string, order int) ([]Article, error) {
+	collection := c.Database("personal-website").Collection("article")
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	opts := options.Find().SetSkip(int64(offset)).SetLimit(int64(count)).SetSort(bson.M{sort: order})
+	filter := bson.M{"title": primitive.Regex{Pattern: ".*" + title + ".*", Options: "i"}}
+	if tags != nil && len(tags) != 0 && tags[0] != "" {
+		filter["tags"] = bson.M{"$all": tags}
+	}
+	cursor, err := collection.Find(ctx, filter, opts)
+
+	if err != nil {
+		return nil, err
+	}
+
+	var results []Article
+	if err = cursor.All(context.TODO(), &results); err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+
+	if results == nil {
+		results = []Article{}
+	}
+
+	return results, nil
 }
 
 // FindAllArticle find all articles
