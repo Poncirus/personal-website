@@ -12,5 +12,9 @@
         "fileRoot": "/home/web/personal-website/static/markdown/",
         "imageRoot": "/home/web/personal-website/static/image/",
         "imageURLRoot": "/static/image/"
+    },
+    "music": {
+        "dir": "/home/web/OneDrive/Music/",
+        "musicURLRoot": "/music/"
     }
 }

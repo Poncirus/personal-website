@@ -51,6 +51,8 @@ func main() {
 	http.HandleFunc("/go/get-tags", getTags)
 	http.HandleFunc("/go/image-upload", imageUpload)
 
+	http.HandleFunc("/go/get-music-list", getMusicList)
+
 	// set listen port
 	port := gjson.Get(Config, "web.port").String()
 	Log.LogInfo("start server at port ", port)
