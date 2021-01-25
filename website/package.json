@@ -35,6 +35,7 @@
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
+    "react-cool-music-player": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
     "react-simplemde-editor": "^4.1.3",
