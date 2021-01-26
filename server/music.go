@@ -6,6 +6,7 @@ import (
 	"path"
 	"strings"
 
+	id3 "github.com/mikkyang/id3-go"
 	"github.com/tidwall/gjson"
 )
 
@@ -39,18 +40,15 @@ func getMusicList(w http.ResponseWriter, r *http.Request) {
 	for _, f := range files {
 		file := f.Name()
 		ext := strings.ToLower(path.Ext(file))
+
 		if ext == ".mp3" || ext == ".wav" || ext == ".flac" || ext == ".ape" {
-			name := file[0 : len(file)-len(ext)]
-			info := strings.Split(name, " - ")
-			if len(info) != 2 {
-				Log.LogWarn("music name does not match pattern, ", name)
-				continue
-			}
+			// read id3 info
+			info, _ := id3.Open(gjson.Get(Config, "music.dir").String() + file)
 
 			var music Music
-			music.ID = info[0]
-			music.Name = info[0]
-			music.Artist = info[1]
+			music.ID = info.Title()
+			music.Name = info.Title()
+			music.Artist = info.Artist()
 			music.Src = gjson.Get(Config, "music.musicURLRoot").String() + file
 
 			response.Music = append(response.Music, music)
