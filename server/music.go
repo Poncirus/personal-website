@@ -115,3 +115,33 @@ func replyDefaultImg(w http.ResponseWriter) {
 	defer img.Close()
 	io.Copy(w, img)
 }
+
+func getMusicLyric(w http.ResponseWriter, r *http.Request) {
+	Log.LogWarn("get-music-lyric, new request")
+
+	type Response struct {
+		Result string
+		Lyric  string
+	}
+
+	var response Response
+
+	r.ParseForm()
+	music := r.Form["music"][0]
+
+	file, err := os.Open(gjson.Get(Config, "music.dir").String() + music[:len(music)-len(path.Ext(music))] + ".lrc")
+
+	if err != nil {
+		response.Result = "Fail"
+		response.Lyric = err.Error()
+		reply(w, response)
+		return
+	}
+
+	lyric, _ := ioutil.ReadAll(file)
+
+	response.Result = "Success"
+	response.Lyric = string(lyric)
+
+	Log.LogInfo("get-music-lyric, finish")
+}
