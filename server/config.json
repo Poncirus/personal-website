@@ -16,6 +16,7 @@
     "music": {
         "dir": "/home/web/OneDrive/Music/",
         "musicURLRoot": "https://liaohanwen.com/music-resources/",
-        "musicImgRoot": "https://liaohanwen.com/music-img/"
+        "musicImgRoot": "https://liaohanwen.com/go/get-music-img?music=",
+        "musicDefaultImg": "/home/web/personal-website/website/dist/profile.png"
     }
 }
