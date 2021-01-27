@@ -88,7 +88,8 @@ func saveArticle(w http.ResponseWriter, r *http.Request) {
 	// create time
 	var create time.Time
 	if val, ok := form["createTime"]; ok && val[0] != "" {
-		err := create.UnmarshalJSON([]byte(val[0]))
+		var err error
+		create, err = time.Parse(time.RFC3339, val[0])
 		if err != nil {
 			response.Result = "Fail"
 			response.Str = err.Error()
