@@ -142,6 +142,7 @@ func getMusicLyric(w http.ResponseWriter, r *http.Request) {
 
 	response.Result = "Success"
 	response.Lyric = string(lyric)
+	reply(w, response)
 
 	Log.LogInfo("get-music-lyric, finish")
 }
