@@ -15,3 +15,24 @@
    line-height: normal;
    font-family: initial;
 }
+
+.cool-player-audio-left {
+   width: 60% !important;
+}
+
+.cool-player-audio-right {
+   width: 40% !important;
+}
+
+.cool-player-audio-artist {
+   width: 80% !important;
+}
+
+.cool-player-audio-del {
+   padding-bottom: 14px;
+}
+
+.cool-lyric h4 {
+   font-size: 12px;
+   width: 80%;
+}

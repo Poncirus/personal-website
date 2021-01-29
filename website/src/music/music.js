@@ -67,9 +67,6 @@ class Music extends React.Component {
             <CoolPlayer
                 data={this.state.musicList}
                 showLyricNormal={true}
-                icons={{
-                    deleteIcon: null
-                }}
             />
         </div>
     }
