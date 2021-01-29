@@ -15,6 +15,7 @@ export default class Player extends React.Component {
             <CoolPlayer
                 data={this.props.list}
                 showLyricNormal={true}
+                currentAudio={this.props.list.length == 0 ? null : this.props.list[0]}
             />
         </div>
     }
