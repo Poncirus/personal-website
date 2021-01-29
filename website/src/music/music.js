@@ -11,12 +11,10 @@ import TopNavbar from '@/navbar/navbar.js'
 
 import { getLanguageCookie } from '@/js/lang.js'
 
+import Player from '@/music/player.js'
+
 const labels = require('@/music/labels.json')
 const lang = getLanguageCookie()
-
-import CoolPlayer from 'react-cool-music-player'
-import 'react-cool-music-player/dist/index.css'
-import '@/music/player.css'
 
 // set title
 document.title = '橘生淮北 - ' + labels['Music'][lang]
@@ -63,14 +61,11 @@ class Music extends React.Component {
     }
 
     render() {
-        return <div className={'wrapper'} id="player">
-            <CoolPlayer
-                data={this.state.musicList}
-                showLyricNormal={true}
-            />
+        return <div>
+            <Player list={this.state.musicList}></Player>
         </div>
     }
 }
 
 // main
-ReactDOM.render(<Music></Music>, document.getElementById('footer'))
+ReactDOM.render(<Music></Music>, document.getElementById('main'))
