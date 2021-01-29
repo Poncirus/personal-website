@@ -35,6 +35,11 @@ export default class TopNavbar extends React.Component {
                 href: "/articles/article-list"
             },
             {
+                item: "Music",
+                label: labels["Music"][lang],
+                href: "/music"
+            },
+            {
                 item: "About me",
                 label: labels["About me"][lang],
                 href: "/about-me"
