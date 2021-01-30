@@ -2,5 +2,13 @@
     "Music": {
         "zh": "音乐",
         "en": "Music"
+    },
+    "Play List": {
+        "zh": "播放列表",
+        "en": "Play List"
+    },
+    "Close": {
+        "zh": "关闭",
+        "en": "Close"
     }
 }

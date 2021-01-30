@@ -9,9 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import TopNavbar from '@/navbar/navbar.js'
 
-import { getLanguageCookie } from '@/js/lang.js'
-
 import Player from '@/music/player.js'
+
+import { getLanguageCookie } from '@/js/lang.js'
 
 const labels = require('@/music/labels.json')
 const lang = getLanguageCookie()
