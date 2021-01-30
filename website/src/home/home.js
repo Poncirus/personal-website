@@ -27,6 +27,10 @@ const panels = [{
     intro: labels["My Notes and thoughts"][lang],
     items: [{ item: labels["Article List"][lang], href: "/articles/article-list" }]
 }, {
+    header: labels["Music"][lang],
+    intro: labels["My favorate songs"][lang],
+    items: [{ item: labels["Player"][lang], href: "/Music" }]
+}, {
     header: labels["About me"][lang],
     intro: labels["My resume & personal information"][lang],
     items: [{ item: labels["My informations"][lang], href: "/about-me" }]

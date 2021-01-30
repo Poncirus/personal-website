@@ -27,6 +27,18 @@
         "zh": "文章列表",
         "en": "Article List"
     },
+    "Music": {
+        "zh": "音乐",
+        "en": "Music"
+    },
+    "My favorate songs": {
+        "zh": "我收藏的音乐",
+        "en": "My favorate songs"
+    },
+    "Player": {
+        "zh": "播放器",
+        "en": "Player"
+    },
     "About me": {
         "zh": "个人简介",
         "en": "About me"
