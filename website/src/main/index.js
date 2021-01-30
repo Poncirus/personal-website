@@ -38,6 +38,10 @@ class Main extends React.Component {
                     <h4 className="font-weight-light">{labels["My Notes and thoughts"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
+                    <h1 className="font-weight-light">{labels["Music"][lang]}</h1>
+                    <h4 className="font-weight-light">{labels["My favorate songs"][lang]}</h4>
+                </Carousel.Item>
+                <Carousel.Item>
                     <h1 className="font-weight-light">{labels["About me"][lang]}</h1>
                     <h4 className="font-weight-light">{labels["My resume & personal information"][lang]}</h4>
                 </Carousel.Item>
