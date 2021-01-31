@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 
 import $ from 'jquery'
 
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { config } from '@/config/config.js'
@@ -72,16 +74,16 @@ class ArtileList extends React.Component {
             alert = <Alert {...this.state.alert} filterTitle={this.filterTitle}></Alert>
         }
 
-        return <div className="row">
-            <div className="col-12 col-md-8">
+        return <Row>
+            <Col xs={12} md={8}>
                 {alert}
                 <List articles={this.state.articles}></List>
-            </div>
-            <div className="col-12 col-md-4">
+            </Col>
+            <Col xs={12} md={4}>
                 <Search filterTitle={this.filterTitle}></Search>
                 <Tags filterTags={this.filterTags}></Tags>
-            </div>
-        </div>
+            </Col>
+        </Row>
     }
 
     refresh() {
