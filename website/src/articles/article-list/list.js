@@ -1,9 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 import { parseTime } from '@/js/time.js'
 
 import { getLanguageCookie } from '@/js/lang.js'
+
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const labels = require('@/articles/article-list/labels.json')
 const lang = getLanguageCookie()
@@ -28,16 +30,22 @@ class Article extends React.Component {
 
     render() {
         return <div className={`text-muted small py-2 px-2 border-gray ${this.props.border ? "border-bottom" : null}`} style={{ transform: "rotate(0)" }}>
-            <div className="row">
-                <div className="col-12 col-md-6">
+            <Row>
+                <Col xs={12} md={6}>
                     <h5 className="text-dark font-weight-bold"> {this.props.Title} </h5>
-                </div>
-                <div className="d-none d-md-block col-md-6 text-right"> {labels['Created'][lang]}: {parseTime(this.props.CreateTime)} &nbsp; {labels['Modified'][lang]}: {parseTime(this.props.LastModification)} </div>
-            </div>
-            <div className="row">
-                <div className="col-12 col-md-8"> {this.props.Description} </div>
-                <div className="d-none d-md-block col-md-4 text-right"> {this.props.Tags == null ? "" : this.props.Tags.join(' \u00A0 ')} </div>
-            </div> <a href={"/articles/article?id=" + this.props.ID} className="stretched-link"></a>
+                </Col>
+                <Col md={6} xs={0} className="d-none d-md-block text-right"> 
+                    {labels['Created'][lang]}: {parseTime(this.props.CreateTime)} &nbsp; {labels['Modified'][lang]}: {parseTime(this.props.LastModification)} 
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12} md={8}>
+                    {this.props.Description}
+                </Col>
+                <Col md={4} xs={0} className="d-none d-md-block text-right">
+                    {this.props.Tags == null ? "" : this.props.Tags.join(' \u00A0 ')}
+                </Col>
+            </Row> <a href={"/articles/article?id=" + this.props.ID} className="stretched-link"></a>
         </div>
     }
 }
