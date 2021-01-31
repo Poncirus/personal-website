@@ -51,6 +51,14 @@
         "zh": "我的信息",
         "en": "My informations"
     },
+    "Neighbor": {
+        "zh": "邻居",
+        "en": "Neighbor"
+    },
+    "My Neighbors": {
+        "zh": "我的邻居们",
+        "en": "My Neighbors"
+    },
     "VSCode": {
         "zh": "VSCode",
         "en": "VSCode"

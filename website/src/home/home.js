@@ -35,6 +35,10 @@ const panels = [{
     intro: labels["My resume & personal information"][lang],
     items: [{ item: labels["My informations"][lang], href: "/about-me" }]
 }, {
+    header: labels["Neighbor"][lang],
+    intro: labels["My Neighbors"][lang],
+    items: [{ item: labels["Neighbor"][lang], href: "/about-me" }]
+}, {
     header: labels["VSCode"][lang],
     intro: labels["Online Vitual Studio Code editor, powered by code-server"][lang],
     items: [{ item: labels["Launch VSCode Online"][lang], href: "https://code.liaohanwen.com" }, { item: labels["code-server on Github"][lang], href: "https://github.com/cdr/code-server" }]
