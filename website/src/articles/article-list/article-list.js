@@ -15,7 +15,7 @@ import SecondaryNavbar from '@/secondary_navbar/secondary_navbar.js'
 import Search from '@/articles/article-list/search.js'
 import Tags from '@/articles/article-list/tags.js'
 import List from '@/articles/article-list/list.js'
-import Alert from '@/articles/article-list/alert.js'
+import Warning from '@/articles/article-list/warning.js'
 
 import { getLanguageCookie } from '@/js/lang.js'
 
@@ -71,7 +71,7 @@ class ArtileList extends React.Component {
     render() {
         var alert = null;
         if (Object.keys(this.state.alert) != 0) {
-            alert = <Alert {...this.state.alert} filterTitle={this.filterTitle}></Alert>
+            alert = <Warning {...this.state.alert} filterTitle={this.filterTitle}></Warning>
         }
 
         return <Row>
