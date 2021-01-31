@@ -10,5 +10,21 @@
     "Close": {
         "zh": "关闭",
         "en": "Close"
+    },
+    "Name": {
+        "zh": "歌曲名",
+        "en": "Name"
+    },
+    "Artist": {
+        "zh": "歌手",
+        "en": "Artist"
+    },
+    "Play": {
+        "zh": "播放",
+        "en": "Play"
+    },
+    "Add": {
+        "zh": "添加",
+        "en": "Add"
     }
 }

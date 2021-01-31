@@ -5,11 +5,15 @@ import $ from 'jquery'
 
 import { config } from '@/config/config.js'
 
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import TopNavbar from '@/navbar/navbar.js'
 
 import Player from '@/music/player.js'
+import List from '@/music/list.js'
 
 import { getLanguageCookie } from '@/js/lang.js'
 
@@ -62,6 +66,13 @@ class Music extends React.Component {
 
     render() {
         return <div>
+            <Container>
+                <Row>
+                    <Col xs={9}>
+                        <List list={this.state.musicList}></List>
+                    </Col>
+                </Row>
+            </Container>
             <Player list={this.state.musicList}></Player>
         </div>
     }
