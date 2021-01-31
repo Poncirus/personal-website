@@ -46,6 +46,10 @@ class Main extends React.Component {
                     <h4 className="font-weight-light">{labels["My resume & personal information"][lang]}</h4>
                 </Carousel.Item>
                 <Carousel.Item>
+                    <h1 className="font-weight-light">{labels["Neighbor"][lang]}</h1>
+                    <h4 className="font-weight-light">{labels["My Neighbors"][lang]}</h4>
+                </Carousel.Item>
+                <Carousel.Item>
                     <h1 className="font-weight-light">{labels["VSCode"][lang]}</h1>
                     <h4 className="font-weight-light">{labels["Online Vitual Studio Code editor"][lang]}</h4>
                 </Carousel.Item>

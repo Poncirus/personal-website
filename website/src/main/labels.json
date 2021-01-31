@@ -35,6 +35,14 @@
         "zh": "关于我的介绍以及简历",
         "en": "My resume & personal information"
     },
+    "Neighbor": {
+        "zh": "邻居",
+        "en": "Neighbor"
+    },
+    "My Neighbors": {
+        "zh": "我的邻居们",
+        "en": "My Neighbors"
+    },
     "VSCode": {
         "zh": "VSCode",
         "en": "VSCode"
