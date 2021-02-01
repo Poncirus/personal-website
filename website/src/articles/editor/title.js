@@ -1,5 +1,10 @@
 import React from 'react'
 
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
+
 import { getLanguageCookie } from '@/js/lang.js'
 
 const labels = require('@/articles/editor/labels.json')
@@ -11,23 +16,23 @@ export default class Title extends React.Component {
     }
 
     render() {
-        return <div className="row justify-content-between">
-            <div className="col-12 col-md-4">
-                <div className="input-group mb-2">
-                    <div className="input-group-prepend">
-                        <span className="input-group-text">{labels['Title'][lang]}</span>
-                    </div>
-                    <input type="text" className="form-control" value={this.props.title} onChange={this.props.changeTitle} />
-                </div>
-            </div>
-            <div className="col-12 col-md-8">
-                <div className="input-group mb-2">
-                    <div className="input-group-prepend">
-                        <span className="input-group-text">{labels['Description'][lang]}</span>
-                    </div>
-                    <input type="text" className="form-control" value={this.props.description} onChange={this.props.changeDescription} />
-                </div>
-            </div>
-        </div>
+        return <Row className="justify-content-between">
+            <Col xs={12} md={4}>
+                <InputGroup className="mb-2">
+                    <InputGroup.Prepend>
+                        <InputGroup.Text>{labels['Title'][lang]}</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl value={this.props.title} onChange={this.props.changeTitle} />
+                </InputGroup>
+            </Col>
+            <Col xs={12} md={8}>
+                <InputGroup className="mb-2">
+                    <InputGroup.Prepend>
+                    <InputGroup.Text>{labels['Description'][lang]}</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl value={this.props.description} onChange={this.props.changeDescription} />
+                </InputGroup>
+            </Col>
+        </Row>
     }
 }
