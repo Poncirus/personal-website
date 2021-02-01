@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 
 import $ from 'jquery'
 
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { config } from '@/config/config.js'
@@ -64,26 +66,26 @@ class Article extends React.Component {
             return null
 
         return <div>
-            <div className="row justify-content-between">
-                <div className="mb-2 col-12 col-md">
+            <Row className="justify-content-between">
+                <Col xs={12} md={6} className="mb-2">
                     <h3> {this.state.article.Title} </h3>
-                </div>
-                <div className="col-12 col-md-6 mb-2">
+                </Col>
+                <Col xs={12} md={6} className="mb-2">
                     <div className="d-none d-md-block text-right mt-3">
                         {labels['Created'][lang]}: {parseTime(this.state.article.CreateTime)} &nbsp; {labels['Modified'][lang]}: {parseTime(this.state.article.LastModification)}
                     </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="input-group mb-2 col-md col-12">
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12} md={6} className="input-group mb-2">
                     <h6> {this.state.article.Description} </h6>
-                </div>
-                <div className="col-12 col-md-6 mb-2">
+                </Col>
+                <Col xs={12} md={6} className="mb-2">
                     <h6 className="d-none d-md-block text-right">
                         {this.state.article.Tags == null ? "" : this.state.article.Tags.map(v => <span key={v}> &nbsp; {v} </span>)}
                     </h6>
-                </div>
-            </div>
+                </Col>
+            </Row>
             <Viewer {...this.state.article}></Viewer>
             <div className='my-3 text-muted' style={{ fontSize: '80%' }}>
                 {labels['Powered by'][lang]}
