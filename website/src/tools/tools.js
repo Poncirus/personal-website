@@ -8,6 +8,7 @@ import SecondaryNavbar from '../secondary_navbar/secondary_navbar'
 
 import List from '@/tools/list.js'
 import Sha256 from '@/tools/sha256.js'
+import Timestamp from '@/tools/timestamp.js'
 
 import { getUrlParameter } from '@/js/url.js'
 
@@ -28,6 +29,11 @@ class Main extends React.Component {
                 item: "sha256",
                 label: labels["sha256"][lang],
                 intro: labels["sha256 encryption"][lang]
+            },
+            timestamp: {
+                item: "timestamp",
+                label: labels["timestamp"][lang],
+                intro: labels["unix timestamp conversion tool"][lang]
             }
         }
 
@@ -57,6 +63,9 @@ class Main extends React.Component {
             case 'sha256':
                 page = <Sha256></Sha256>
                 break;
+            case 'timestamp':
+                    page = <Timestamp></Timestamp>
+                    break;
 
             default:
                 alert('tool does not exist')

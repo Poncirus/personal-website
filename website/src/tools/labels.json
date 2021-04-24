@@ -15,6 +15,14 @@
         "zh": "sha256 编码器",
         "en": "sha256 encryption"
     },
+    "timestamp": {
+        "zh": "时间戳",
+        "en": "timestamp"
+    },
+    "unix timestamp conversion tool": {
+        "zh": "Unix时间戳转换工具",
+        "en": "unix timestamp conversion tool"
+    },
     "Data": {
         "zh": "数据",
         "en": "Data"
@@ -22,5 +30,21 @@
     "SHA-256 hash": {
         "zh": "SHA-256 哈希",
         "en": "SHA-256 hash"
+    },
+    "Unix timestamp": {
+        "zh": "Unix 时间戳",
+        "en": "Unix timestamp"
+    },
+    "Time": {
+        "zh": "时间",
+        "en": "Time"
+    },
+    "Delete": {
+        "zh": "删除",
+        "en": "Delete"
+    },
+    "Add converter": {
+        "zh": "添加转换",
+        "en": "Add converter"
     }
 }
