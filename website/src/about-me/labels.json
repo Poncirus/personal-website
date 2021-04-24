@@ -42,5 +42,9 @@
     "Email": {
         "zh": "邮箱",
         "en": "Email"
+    },
+    "Recommand": {
+        "zh": "（推荐使用）",
+        "en": "(Recommand)"
     }
 }

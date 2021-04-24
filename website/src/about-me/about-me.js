@@ -124,7 +124,7 @@ class Contact extends React.Component {
             <h1 className='font-weight-light'>{labels['Contact'][lang]}</h1>
             <hr className='my-3' />
             <p className="lead my-0">{labels["Tel / Wechat"][lang]}: (+86) 136-3833-2881</p>
-            <p className="lead my-0">{labels["Email"][lang]}: <a href="mailto:web@liaohanwen.com" className="text-reset text-decoration-none">web@liaohanwen.com</a></p>
+            <p className="lead my-0">{labels["Email"][lang]}: <a href="mailto:web@liaohanwen.com" className="text-reset text-decoration-none">web@liaohanwen.com {labels["Recommand"][lang]}</a></p>
         </Jumbotron>
     }
 }
