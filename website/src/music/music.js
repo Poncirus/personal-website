@@ -33,10 +33,12 @@ class Music extends React.Component {
         super(props)
 
         this.state = {
-            musicList: []
+            musicList: [],
+            playerList: []
         }
 
         this.getMusicList = this.getMusicList.bind(this)
+        this.playerDeleteMusic = this.playerDeleteMusic.bind(this)
     }
 
     componentDidMount() {
@@ -59,9 +61,15 @@ class Music extends React.Component {
                     return
                 }
 
-                this.setState({ musicList: json.Music })
+                this.setState({ musicList: json.Music, playerList: json.Music })
 
             }.bind(this));
+    }
+
+    playerDeleteMusic(index, _id) {
+        let list = [...this.state.playerList]
+        list.splice(index, 1)
+        this.setState({ playerList: list })
     }
 
     render() {
@@ -73,7 +81,7 @@ class Music extends React.Component {
                     </Col>
                 </Row>
             </Container>
-            <Player list={this.state.musicList}></Player>
+            <Player list={this.state.playerList} delete={this.playerDeleteMusic}></Player>
         </div>
     }
 }

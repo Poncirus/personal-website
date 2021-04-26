@@ -32,6 +32,7 @@ export default class Player extends React.Component {
                 onPlayListStatusChange={(status) => {
                     this.setState({playListShow: status})
                 }}
+                onDelete={this.props.delete}
             />
         </div>
     }
