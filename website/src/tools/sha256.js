@@ -1,5 +1,8 @@
 import React from 'react'
 
+import Container from "react-bootstrap/Container"
+import Form from "react-bootstrap/Form"
+
 import sha256 from 'sha256'
 
 import { getLanguageCookie } from '@/js/lang.js'
@@ -23,15 +26,15 @@ export default class Sha256 extends React.Component {
     }
 
     render() {
-        return <main className="container mt-4" role="main">
-            <div className="form-group">
-                <label htmlFor="data">{labels["Data"][lang]}</label>
-                <textarea className="form-control" id="data" rows='5' onChange={this.change}></textarea>
-            </div>
-            <div className="form-group">
-                <label htmlFor="hash">{labels["SHA-256 hash"][lang]}</label>
-                <textarea className="form-control" id="hash" rows='1' readOnly value={this.state.data == '' ? '' : sha256(this.state.data)}></textarea>
-            </div>
-        </main>
+        return <Container className="mt-4" role="main">
+            <Form.Group>
+                <Form.Label>{labels["Data"][lang]}</Form.Label>
+                <Form.Control as="textarea" rows={5} onChange={this.change}></Form.Control>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>{labels["SHA-256 hash"][lang]}</Form.Label>
+                <Form.Control as="textarea" rows={1} readOnly value={this.state.data == '' ? '' : sha256(this.state.data)}></Form.Control>
+            </Form.Group>
+        </Container>
     }
 }
