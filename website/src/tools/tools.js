@@ -95,7 +95,7 @@ class Main extends React.Component {
 
         return <div>
             <TopNavbar currentPage='Tools'></TopNavbar>
-            <SecondaryNavbar currentPage={this.state.current == 'list' ? 'list' : this.toolList[this.state.current]['label']} items={items} buttons={[]}></SecondaryNavbar>
+            <SecondaryNavbar currentPage={this.state.current == 'list' ? labels['list'][lang] : this.toolList[this.state.current]['label']} items={items} buttons={[]}></SecondaryNavbar>
             {page}
         </div>
     }
