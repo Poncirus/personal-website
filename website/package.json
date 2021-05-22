@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --host 0.0.0.0 --port 8080 --disable-host-check",
+    "dev": "webpack serve --hot --host 0.0.0.0 --port 8080 --disable-host-check",
     "build": "webpack"
   },
   "keywords": [],

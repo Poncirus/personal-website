@@ -46,5 +46,21 @@
     "Add converter": {
         "zh": "添加转换",
         "en": "Add converter"
+    },
+    "URL converter": {
+        "zh": "URL 编解码器",
+        "en": "URL converter"
+    },
+    "URL encoder & decoder": {
+        "zh": "URL 编码器 & 解码器",
+        "en": "URL encoder & decoder"
+    },
+    "URL Encode": {
+        "zh": "URL 编码",
+        "en": "URL Encode"
+    },
+    "URL Decode": {
+        "zh": "URL 解码",
+        "en": "URL Decode"
     }
 }

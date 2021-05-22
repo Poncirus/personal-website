@@ -9,6 +9,7 @@ import SecondaryNavbar from '../secondary_navbar/secondary_navbar'
 import List from '@/tools/list.js'
 import Sha256 from '@/tools/sha256.js'
 import Timestamp from '@/tools/timestamp.js'
+import URL from '@/tools/url.js'
 
 import { getUrlParameter } from '@/js/url.js'
 
@@ -34,6 +35,11 @@ class Main extends React.Component {
                 item: "timestamp",
                 label: labels["timestamp"][lang],
                 intro: labels["unix timestamp conversion tool"][lang]
+            },
+            url: {
+                item: "url",
+                label: labels["URL converter"][lang],
+                intro: labels["URL encoder & decoder"][lang]
             }
         }
 
@@ -64,8 +70,11 @@ class Main extends React.Component {
                 page = <Sha256></Sha256>
                 break;
             case 'timestamp':
-                    page = <Timestamp></Timestamp>
-                    break;
+                page = <Timestamp></Timestamp>
+                break;
+            case 'url':
+                page = <URL></URL>
+                break;
 
             default:
                 alert('tool does not exist')
@@ -85,8 +94,8 @@ class Main extends React.Component {
         });
 
         return <div>
-            <TopNavbar currentPage="Tools"></TopNavbar>
-            <SecondaryNavbar currentPage={labels[this.state.current][lang]} items={items} buttons={[]}></SecondaryNavbar>
+            <TopNavbar currentPage='Tools'></TopNavbar>
+            <SecondaryNavbar currentPage={this.state.current == 'list' ? 'list' : this.toolList[this.state.current]['label']} items={items} buttons={[]}></SecondaryNavbar>
             {page}
         </div>
     }
