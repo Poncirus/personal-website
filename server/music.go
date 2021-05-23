@@ -17,11 +17,11 @@ func getMusicList(w http.ResponseWriter, r *http.Request) {
 	Log.LogWarn("get-music-list, new request")
 
 	type Music struct {
-		Src    string `json:"src"`
-		Artist string `json:"artist"`
-		Name   string `json:"name"`
-		Img    string `json:"img"`
-		ID     string `json:"id"`
+		MusicSrc string `json:"musicSrc"`
+		Singer   string `json:"singer"`
+		Name     string `json:"name"`
+		Cover    string `json:"cover"`
+		Key      string `json:"key"`
 	}
 
 	type Response struct {
@@ -50,11 +50,11 @@ func getMusicList(w http.ResponseWriter, r *http.Request) {
 			info, _ := id3.Open(gjson.Get(Config, "music.dir").String() + file)
 
 			var music Music
-			music.ID = info.Title()
+			music.Key = info.Title()
 			music.Name = info.Title()
-			music.Artist = info.Artist()
-			music.Img = gjson.Get(Config, "music.musicImgRoot").String() + file
-			music.Src = gjson.Get(Config, "music.musicURLRoot").String() + file
+			music.Singer = info.Artist()
+			music.Cover = gjson.Get(Config, "music.musicImgRoot").String() + file
+			music.MusicSrc = gjson.Get(Config, "music.musicURLRoot").String() + file
 
 			response.Music = append(response.Music, music)
 		}

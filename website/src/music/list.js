@@ -41,7 +41,7 @@ class Music extends React.Component {
                 {this.props.name}
             </Col>
             <Col xs={3}>
-                {this.props.artist}
+                {this.props.singer}
             </Col>
         </Row>
     }
