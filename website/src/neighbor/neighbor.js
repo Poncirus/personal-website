@@ -50,6 +50,12 @@ class Neighbor extends React.Component {
                 name: "苏泽",
                 discription: "不爱学写代码的菜鸡",
                 href: "https://suze666.top/"
+            },
+            {
+                profile: "https://kalacloud.com/favicon-32x32.png",
+                name: "卡拉云",
+                discription: "卡拉云后台系统",
+                href: "https://kalacloud.com/"
             }
         ]
     }
